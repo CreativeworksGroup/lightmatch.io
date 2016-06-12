@@ -1,0 +1,6 @@
+<template name="addMatch">
+    <!-- show drop zone if signed in -->
+    {{#if currentUser}}
+        {{> quickForm collection="Matches" type="insert"}}
+    {{/if}}    
+</template>

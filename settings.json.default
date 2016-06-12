@@ -1,0 +1,15 @@
+{
+    "public": {
+        "recordsPerPage" : "5",
+        "aliyunRegion"   : "Aliyun Region",
+        "aliyunBucket"   : "Aliyun Bucket Name",
+        "aliyunBucketThumb"   : "Aliyun Bucket Name",
+        "aliyunInternal" : false,
+        "aliyunAccessId" : "Access ID",
+        "aliyunAccessKeySecret" : "Access Key Secret",
+        "forbidClientAccountCreation" : false,
+        "gtm": {
+            "id": "Your GTM ID"
+        }
+    }
+}

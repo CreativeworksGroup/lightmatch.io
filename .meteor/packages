@@ -1,0 +1,48 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+iron:router
+twbs:bootstrap
+sacha:spin
+chrismbeckett:toastr
+raix:ui-dropped-event
+cfs:standard-packages
+cfs:gridfs
+reactive-var
+accounts-password
+ian:accounts-ui-bootstrap-3
+msavin:mongol
+momentjs:moment
+natestrauser:font-awesome
+aldeed:simple-schema
+aldeed:collection2
+aldeed:autoform
+yogiben:autoform-file
+yogiben:autoform-tags
+cfs:graphicsmagick
+iyyang:cfs-aliyun
+isotope:isotope
+gorillastack:iron-router-gtm
+mrt:jquery-masonry
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+standard-minifier-css
+standard-minifier-js
+mrt:jquery-imagesloaded
+alanning:roles
+yogiben:admin
+dburles:collection-helpers

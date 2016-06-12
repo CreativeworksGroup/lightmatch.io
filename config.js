@@ -1,0 +1,11 @@
+Accounts.config({
+  forbidClientAccountCreation : Meteor.settings.public.forbidClientAccountCreation
+});
+
+AdminConfig = { 
+    adminEmails: ['kwun@creativeworks.com.hk'], 
+    collections: 
+    {
+//        Images: {}
+    } 
+}

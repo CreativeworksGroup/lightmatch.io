@@ -1,0 +1,32 @@
+<template name="image">
+    <div class="image {{displayClass}}">
+        <!-- the image -->    
+        <div class="row">
+            <div>
+                <a href="{{OSSUrl storeName='images'}}" target="_blank" class="thumbnail img-responsive">
+                    <img src="{{OSSUrl storeName='thumbs'}}" alt="" />
+                </a>
+            </div>
+        </div>
+        <!-- image info -->
+        <div class="row">
+            <div>
+                <div class="image-info">
+                    {{#if ownImage}}
+                    <a class="delete-image">
+                        <i class="fa fa-trash fa-2x"></i>
+                    </a>
+                    {{/if}}
+                    由 <a class="user-link" href="{{pathFor route='userPage' username=this.userSlug}}">{{username}}</a> 上载 / 
+                    <span class="count">共下载 {{downloadCount}} 次</span>
+                    {{#if isAdmin}}
+                    <div class="pull-right">
+                        {{#if published}}Published{{else}}Moderate{{/if}}
+                        <input type="checkbox" checked="{{published}}" class="toggle-published" />
+                    </div>
+                    {{/if}}
+                </div> 
+            </div>
+        </div>
+    </div>
+</template>

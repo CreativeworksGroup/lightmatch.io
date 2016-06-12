@@ -1,0 +1,26 @@
+<template name="home">
+    <!-- show drop zone if signed in -->
+    {{#if currentUser}}
+        {{> dropzone}}
+    {{/if}}    
+    <div class="container">
+        <div class="home jumbotron">
+            <h1>LightMatch.es 光合堂</h1>
+            <p>我们每天提供一张<a href="/terms-of-use">完全免费</a>的相片给大家下载使用。欢迎<a href="/subscribe">订阅</a>我们的最新资讯。</p>
+        </div>
+    <nav id="view-switcher">
+        <ul>
+            <li><a href="#full" class="full"><i class="fa fa-pause fa-2" aria-hidden="true"></i></a></li>
+            <li><a href="#grid" class="grid"><i class="fa fa-th fa-2" aria-hidden="true"></i></a></li>
+        </ul>
+    </nav>
+    
+    <div class="images">
+        <div class="grid-sizer"></div>
+        <!-- existing images -->
+        {{#each images}}
+            {{> image }}
+        {{/each}}
+    </div>
+    </div>
+</template>
