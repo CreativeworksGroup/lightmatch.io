@@ -3,7 +3,8 @@ Accounts.config({
 });
 
 AdminConfig = { 
-    adminEmails: ['kwun@creativeworks.com.hk'], 
+    adminEmails: ['kwun@creativeworks.com.hk'],
+    skin: 'yellow-light',
     collections: 
     {
 //        Images: {}

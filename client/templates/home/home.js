@@ -80,14 +80,6 @@ Template.home.onRendered(function(){
         });
     });
 
-
-
-    
-//    Meteor.setTimeout(function(){
-//        $(".images").masonry({
-//            itemSelector: '.image'
-//        })
-//    }, 1000);
 });
 
 Template.image.onRendered(function() {

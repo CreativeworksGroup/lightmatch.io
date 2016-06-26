@@ -3,29 +3,30 @@ Meteor.publish('images', function(limit, userSlug){
     
     var findQuery = {published:true};
     
-    if (this.userId){
-        if (Roles.userIsInRole(this.userId, ['admin'])){
-            findQuery = {};
-        }
-        else{
-            findQuery = {
-                $or : [
-                    {published: true}, 
-                    {userId: this.userId}
-                ]
-            };
-        }
-    }
+//    if (this.userId){
+//        if (Roles.userIsInRole(this.userId, ['admin'])){
+//            findQuery = {};
+//        }
+//        else{
+//            findQuery = {
+//                $or : [
+//                    {published: true}, 
+//                    {userId: this.userId}
+//                ]
+//            };
+//        }
+//    }
     
     if (userSlug){
         check(userSlug, String);
 //        findQuery.userSlug = userSlug;
-        if (Roles.userIsInRole(this.userId, ['admin'])){
-            findQuery = {userSlug:userSlug};
-        }
-        else{
-            findQuery = {published:true, userSlug:userSlug};
-        }
+        findQuery = {userSlug:userSlug};
+//        if (Roles.userIsInRole(this.userId, ['admin'])){
+//            findQuery = {userSlug:userSlug};
+//        }
+//        else{
+//            findQuery = {published:true, userSlug:userSlug};
+//        }
     }        
 
     
