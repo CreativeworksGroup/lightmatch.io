@@ -61,6 +61,7 @@ ejson@1.0.11
 email@1.0.12
 fastclick@1.0.11
 fortawesome:fontawesome@4.5.0
+gabrielengel:konecty-magnific-popup@0.9.9
 geojson-utils@1.0.8
 gorillastack:iron-router-gtm@0.2.0
 hot-code-push@1.0.4
@@ -109,7 +110,6 @@ mpowaga:jquery-ui-widget@1.11.4
 mrt:jquery-imagesloaded@0.0.2
 mrt:jquery-masonry@0.1.0
 msavin:mongol@1.6.2
-natestrauser:font-awesome@4.6.3
 npm-bcrypt@0.8.5
 npm-mongo@1.4.43
 observe-sequence@1.0.11

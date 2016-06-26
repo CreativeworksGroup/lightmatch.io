@@ -16,7 +16,6 @@ accounts-password
 ian:accounts-ui-bootstrap-3
 msavin:mongol
 momentjs:moment
-natestrauser:font-awesome
 aldeed:simple-schema
 aldeed:collection2
 aldeed:autoform
@@ -46,3 +45,4 @@ mrt:jquery-imagesloaded
 alanning:roles
 yogiben:admin
 dburles:collection-helpers
+gabrielengel:konecty-magnific-popup

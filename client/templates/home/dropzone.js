@@ -14,13 +14,31 @@ Template.dropzone.events({
 //            console.log(newFile);
             Images.insert(newFile, function(error, fileObj){
                 if (error){
-                    toastr.error("Upload failed... please try again.");
+                    toastr.error("上载失败⋯⋯ 请重新上载。<br/>Upload failed... please try again.");
                     console.log(error);
                 }
                 else{
-                    toastr.success("upload succeeded!");
+//                    toastr.info("Uploading, please wait...");
+//                    Images.on('stored',function(fileObj, storeName){
+//                        toastr.success("Upload success!");
+//                    })
+                    
+                    $.magnificPopup.open({
+                      items: {
+                        src: '#uploading-dialog'
+                      },
+                        closeOnBgClick: false,
+                        showCloseBtn: false,
+                        enableEscapeKey: false
+//                      type: 'inline'
+                    });
                 }
             });
+            
+            newFile.once("uploaded", function(){
+                toastr.success("上载成功，正在制作缩图。<br/>Upload success! Generating thumbnail...");
+                $.magnificPopup.close();
+            })
         });
     }
 });

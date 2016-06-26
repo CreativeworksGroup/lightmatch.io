@@ -16,6 +16,14 @@ Images = new FS.Collection('Images', {
   }
 });
 
+imageStore.on('stored', function(fileObj, storeName){
+    console.log('Image stored on Aliyun.');
+});
+
+thumbStore.on('stored', function(fileObj, storeName){
+    console.log('Thumbnamil stored on Aliyun.');
+});
+
 FS.File.prototype.OSSUrl = function(options) {
   var self = this;
 //    console.log(self);

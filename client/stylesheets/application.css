@@ -4,6 +4,7 @@ body {
     background: #eee;
     color: #666;
     font-family: 'Helvetica Neue', 'Arial', 'Noto Sans SC', sans-serif;
+    font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.1em;
 }
@@ -16,6 +17,10 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px !important;
+}
+
+h1,h2,h3,h4{
+    font-weight: 300;
 }
 
 h1 {
@@ -96,4 +101,13 @@ h1 {
 nav.subscribe{
    text-align: center;
     line-height: 9em;
+}
+
+#uploading-dialog{
+    background: white;
+    padding: 20px 30px;
+    text-align: left;
+    max-width: 400px;
+    margin: 40px auto;
+    position: relative;
 }

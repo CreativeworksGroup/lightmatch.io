@@ -2,7 +2,10 @@
     <!-- show drop zone if signed in -->
     {{#if currentUser}}
         {{> dropzone}}
-    {{/if}}    
+    {{/if}}
+    <div id="uploading-dialog" class="zoom-anim-dialog mfp-hide">
+        <h3>上载中<br/>Uploading...</h3>
+    </div>
     <div class="container">
         <div class="home jumbotron">
             <h1>LightMatch.es 光合堂</h1>
