@@ -19,12 +19,18 @@ Template.image.helpers({
         }
     },
     
-//    checked: function(){
-//        if (this.published){
-//            return "checked";
-//        }
-//        else return "";
-//    },
+    publisher: function(){
+        Meteor.subscribe('singleUser', this.userId);
+        var author = Meteor.users.findOne({ _id: this.userId});
+        console.log(author);
+        return author.profile.firstName + " "+ author.profile.lastName;
+    },
+    
+    authorname: function(){
+        Meteor.subscribe('singleUser', this.userId);
+        var author = Meteor.users.findOne({ _id: this.userId});
+        return author.username;
+    },
     
     isAdmin: function(){
         return Roles.userIsInRole(Meteor.userId(), ['admin']);

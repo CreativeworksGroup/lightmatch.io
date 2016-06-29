@@ -17,7 +17,7 @@
                         <i class="fa fa-trash fa-2x"></i>
                     </a>
                     {{/if}}
-                    由 <a class="user-link" href="{{pathFor route='userPage' username=this.userSlug}}">{{username}}</a> 上载 / 
+                    由 <a class="user-link" href="{{pathFor route='userPage' userSlug=authorname}}">{{publisher}}</a> 上载 / 
                     <span class="count">共下载 {{downloadCount}} 次</span>
                     {{#if isAdmin}}
                     <div class="pull-right">

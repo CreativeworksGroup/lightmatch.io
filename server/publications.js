@@ -1,40 +1,13 @@
-Meteor.publish('images', function(limit, userSlug){
+Meteor.publish('images', function(limit, username){
     check(limit, Number);
     
     var findQuery = {published:true};
     
-//    if (this.userId){
-//        if (Roles.userIsInRole(this.userId, ['admin'])){
-//            findQuery = {};
-//        }
-//        else{
-//            findQuery = {
-//                $or : [
-//                    {published: true}, 
-//                    {userId: this.userId}
-//                ]
-//            };
-//        }
-//    }
-    
-    if (userSlug){
-        check(userSlug, String);
-//        findQuery.userSlug = userSlug;
-        findQuery = {userSlug:userSlug};
-//        if (Roles.userIsInRole(this.userId, ['admin'])){
-//            findQuery = {userSlug:userSlug};
-//        }
-//        else{
-//            findQuery = {published:true, userSlug:userSlug};
-//        }
+    if (username){
+        check(username, String);
+        var author = Meteor.users.findOne({username: username});
+        findQuery = {userId: author._id}
     }        
-
-    
-    
-    
-//        query = {published:true};
-//        console.log(Meteor.userId);
-
     
     return Images.find(findQuery, {
         limit: limit,
@@ -42,16 +15,18 @@ Meteor.publish('images', function(limit, userSlug){
     });
 });
 
-//Meteor.publish('matches', function(limit, username){
-//    check(limit, Number);
-//    
-//    var findQuery = {};
-//    if (username){
-//        check(username, String);
-//        findQuery = {username:username};
-//    }
-//    
-//    return Matches.find(findQuery, {
-//        limit: limit
-//    })
-//});
+
+// The user fields we are willing to publish.
+const USER_FIELDS = {
+    username: 1,
+//  emails: 1,
+    profile: 1
+};
+
+Meteor.publish('singleUser', function (userId) {
+  // Make sure userId is a string.
+  check(userId, String);
+
+  // Publish a single user - make sure only allowed fields are sent.
+  return Meteor.users.find(userId, { fields: USER_FIELDS });
+});
