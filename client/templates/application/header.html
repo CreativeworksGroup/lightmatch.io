@@ -10,8 +10,11 @@
         </button>        
         <a class="navbar-brand" href="{{pathFor 'home'}}">LightMatch.es 光合堂</a>      
       </div>      
-      <div class="collapse navbar-collapse" id="navigation">        
-        <ul class="nav navbar-nav navbar-right">          
+      <div class="collapse navbar-collapse" id="navigation">  
+        <ul class="nav navbar-nav navbar-right">
+            {{#if currentUser}}
+            <li><a href="{{photoPath}}">我的相片</a></li>
+            {{/if}}
             {{> loginButtons}}  
         </ul>      
       </div>    

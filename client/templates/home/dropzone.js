@@ -36,7 +36,7 @@ Template.dropzone.events({
             });
             
             newFile.once("uploaded", function(){
-                toastr.success("上载成功，正在制作缩图。<br/>Upload success! Generating thumbnail...");
+                toastr.success("上载成功，正在制作缩图，你很快可在「我的相片」看到。<br/>Upload success! Generating thumbnail... You check this it out from \"My Photo\" soon.");
                 $.magnificPopup.close();
             })
         });
