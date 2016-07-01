@@ -91,6 +91,7 @@ meteor@1.1.15_1
 meteor-base@1.0.4
 meteorhacks:meteorx@1.4.1
 meteorhacks:unblock@1.1.0
+meteorspark:util@0.2.0
 meteortoys:toykit@2.2.1
 mfactory:admin-lte@0.0.2
 minifier-css@1.1.12_1
@@ -133,6 +134,7 @@ srp@1.0.9
 standard-minifier-css@1.0.7_1
 standard-minifier-js@1.0.7_1
 stylus@2.512.3_1
+tap:i18n@1.8.2
 templating@1.1.12_1
 templating-tools@1.0.4
 tracker@1.0.14

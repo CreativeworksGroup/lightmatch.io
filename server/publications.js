@@ -3,11 +3,14 @@ Meteor.publish('images', function(limit, username){
     
     var findQuery = {published:true};
     
+    if (this.userId && Roles.userIsInRole(this.userId, ['admin'])){
+        findQuery = {};
+    }
     if (username){
         check(username, String);
         var author = Meteor.users.findOne({username: username});
         findQuery = {userId: author._id}
-    }        
+    }
     
     return Images.find(findQuery, {
         limit: limit,

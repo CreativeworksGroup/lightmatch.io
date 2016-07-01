@@ -89,4 +89,3 @@ Images.allow({
     remove: function(userId, image) { return ((userId === image.userId) || Roles.userIsInRole(userId, ['admin'])); },
     download: function() { return true; }
 });
-
