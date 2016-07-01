@@ -17,8 +17,8 @@
                         <i class="fa fa-trash fa-2x"></i>
                     </a>
                     {{/if}}
-                    由 <a class="user-link" href="{{pathFor route='userPage' userSlug=authorname}}">{{publisher}}</a> 上载 / 
-                    <span class="count">共下载 {{downloadCount}} 次</span>
+                    <a class="user-link" href="{{pathFor route='userPage' userSlug=authorname}}">{{publisher}}</a> / 
+                    <span class="count">{{_ "downloadCount" count=downloadCount}}</span>
                     {{#if isAdmin}}
                     <div class="pull-right">
                         {{#if published}}Published{{else}}Moderate{{/if}}

@@ -1,0 +1,17 @@
+{
+    "uploading": "Uploading",
+    "siteName": "LightMatch.es",
+    "myPhotos": "My Photos",
+    "menuLanguage": "Languages",
+    "error404": "Sorry, we couldn't find a page at this address.",
+    "dropFileMsg": "Please drag and drop your photos to here for uploading.",
+    "siteDescription": "We provide <a href=\"/terms-of-use\">free</a> photos (no watermark!) everyday for you to download and use. Please <a href=\"/subscribe\">follow</a> our latest updates.",
+    "downloadCount": "Downloaded __count__ time",
+    "downloadCount_plural": "Downloaded __count__ times",
+    "privacy": "Privacy",
+    "license": "License",
+    "disclaimer": "Disclaimer",
+    "agreement": "Lightmatches Agreement (for mainland Chinese users only)",
+    "enriched": "Enriched by <a href=\"http://www.creativeworks.com.hk\" target=\"_blank\">Creativeworks</a>",
+    "contactUs": "Contact Us"
+}

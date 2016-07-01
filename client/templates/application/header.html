@@ -8,15 +8,23 @@
           <span class="icon-bar"></span>          
           <span class="icon-bar"></span>        
         </button>        
-        <a class="navbar-brand" href="{{pathFor 'home'}}">LightMatch.es 光合堂</a>      
+        <a class="navbar-brand" href="{{pathFor 'home'}}">{{_ "siteName"}}</a>      
       </div>      
       <div class="collapse navbar-collapse" id="navigation">  
         <ul class="nav navbar-nav navbar-right">
             {{#if currentUser}}
-            <li><a href="{{photoPath}}">我的相片</a></li>
+            <li><a href="{{photoPath}}">{{_ "myPhotos"}}</a></li>
             {{/if}}
-            {{> loginButtons}}  
+            {{> loginButtons}}
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">{{_ "menuLanguage"}}<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li><a href="#" class="lang" data-lang="en">English</a></li>
+                <li><a href="#" class="lang" data-lang="zh-CN">中文</a></li>          
+              </ul>
+            </li>
         </ul>      
+
       </div>    
   </nav>
     </div>  

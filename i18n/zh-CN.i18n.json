@@ -1,0 +1,16 @@
+{
+    "uploading": "上载中",
+    "siteName": "光合堂",
+    "myPhotos": "我的相片",
+    "menuLanguage": "语言",
+    "error404": "很抱歉，没有找到这个地址的页面。",
+    "dropFileMsg": "把相片拖放此处上传",
+    "siteDescription": "我们每天提供一张<a href=\"/terms-of-use\">免费</a>免费的相片（无水印！）给大家下载使用。欢迎<a href=\"/subscribe\">订阅</a>我们的最新资讯。",
+    "downloadCount": "共下载 %s 次",
+    "privacy": "私隐条款",
+    "license": "使用权",
+    "disclaimer": "免责声明",
+    "agreement": "Lightmatches协议 (内地用户适用)",
+    "enriched": "<a href=\"http://www.creativeworks.com.hk\" target=\"_blank\">造作工房</a>出品",
+    "contactUs": "联络我们"
+}
