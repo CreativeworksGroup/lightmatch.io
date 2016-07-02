@@ -10,7 +10,6 @@ Template.image.helpers({
     
     displayClass: function(){
         var displayGrid = Session.get('displayGrid');
-//        console.log(displayGrid);
         if (displayGrid){
             return 'thumb col-md-3';
         }
@@ -22,7 +21,6 @@ Template.image.helpers({
     publisher: function(){
         Meteor.subscribe('singleUser', this.userId);
         var author = Meteor.users.findOne({ _id: this.userId});
-        console.log(author);
         return author.profile.firstName + " "+ author.profile.lastName;
     },
     
@@ -59,7 +57,6 @@ Template.image.events({
         });                      
     },
     'click a.thumbnail': function(e){
-        console.log(this.downloadCount);
         if (!this.downloadCount)
             this.downloadCount = 0;
         Images.update(this._id,{

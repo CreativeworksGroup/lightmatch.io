@@ -48,7 +48,6 @@ var $gallery;
 var debouncedRelayout = _.debounce(function(){
     if ($gallery){
         $gallery.masonry();
-        console.log('debounced called.')
     }
 },500);
 
@@ -57,7 +56,6 @@ Template.home.onRendered(function(){
         
     $("#view-switcher a.full").click(function(e){
         e.preventDefault();
-//        console.log("full clicked");
         $(".image").removeClass('col-md-3');
         $gallery.masonry('destroy'); 
         Session.set('displayGrid', false);
@@ -65,7 +63,6 @@ Template.home.onRendered(function(){
 
     $("#view-switcher a.grid").click(function(e){
         e.preventDefault();
-//        console.log("grid clicked");
         $(".image").addClass('col-md-3');
         Session.set('displayGrid', true);
         
