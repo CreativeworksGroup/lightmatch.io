@@ -9,24 +9,20 @@
 
 
 .image-info {
-  color: #888;
+    color: #888;
     display: none;
-/*  font-family: Rockwell,Georgia,Arial;*/
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  background-color: #fff;
-  display: block;
-  padding: 0.5em;
-  margin-bottom: 5px;
-  line-height: 1.5;
-/*
-  border: 1px solid #ddd;
-  border-radius: 4px;
-*/
-  -webkit-transition: border .2s ease-in-out;
-  -o-transition: border .2s ease-in-out;
-  transition: border .2s ease-in-out;
+    font-family: 'Noto Serif', 'Noto Sans SC', serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background-color: #fff;
+    display: block;
+    padding: 0.5em;
+    margin-bottom: 5px;
+    line-height: 1.5;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
 }
 
 .delete-image {
@@ -44,6 +40,11 @@
 }
 
 .image{
+/*
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;    
+*/
     margin-bottom: 15px;
 }
 

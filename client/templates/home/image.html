@@ -21,7 +21,7 @@
                     <span class="count">{{_ "downloadCount" count=downloadCount}}</span>
                     {{#if isAdmin}}
                     <div class="pull-right">
-                        {{#if published}}Published{{else}}Moderate{{/if}}
+                        {{_ "featured"}}
                         <input type="checkbox" checked="{{published}}" class="toggle-published" />
                     </div>
                     {{/if}}
