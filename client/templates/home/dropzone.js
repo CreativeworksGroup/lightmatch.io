@@ -6,9 +6,9 @@ Template.dropzone.events({
 //        console.log('dropped a file');
         FS.Utility.eachFile(e, function(file){
             var newFile = new FS.File(file);
-            newFile.username = user.username;
+//            newFile.username = user.username;
             newFile.userId = user._id;
-            newFile.userSlug = Slug.slugify(user.username);
+//            newFile.userSlug = Slug.slugify(user.username);
             newFile.published = false;
             newFile.downloadCount = 0;
 //            console.log(newFile);
