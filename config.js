@@ -4,5 +4,5 @@ AdminConfig = {
     nonAdminRedirectRoute: 'entrySignIn',
 }
 Accounts.config({
-    forbidClientAccountCreation : Meteor.settings.public.forbidClientAccountCreation
+//    forbidClientAccountCreation : Meteor.settings.public.forbidClientAccountCreation
 });

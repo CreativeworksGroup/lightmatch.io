@@ -1,3 +1,5 @@
+var $gallery = $(".images");
+
 Template.home.created = function(){
     var self = this;
     
@@ -5,7 +7,18 @@ Template.home.created = function(){
     self.limit.set(parseInt(Meteor.settings.public.recordsPerPage));
     
     Tracker.autorun(function(){
-        Meteor.subscribe('images', self.limit.get(), Router.current().params.userSlug);
+        Meteor.subscribe('images', self.limit.get(), Router.current().params.userSlug, {onReady:function(){
+//            console.log("new data ready");
+            var displayGrid = Session.get('displayGrid');
+            console.log(displayGrid);
+            if (displayGrid){
+                debouncedRelayout();
+//                _.debounce(function(){
+////                    console.log('call masonry reload');
+//                    $(".images").masonry('reloadItems');
+//                }, 500);
+            }
+        }});
     });
     
     Session.set('displayGrid', false);
@@ -33,69 +46,72 @@ var incrementLimit = function(templateInstance){
     templateInstance.limit.set(newLimit);
 }
 
-var $gallery;
-
-//var initMasonry = function($imgs){
-//    if ($gallery){
-//        $gallery.masonry({
-//            itemSelector : '.image.col-md-3',
-//            gutter: 10,
-//            columnWidth: '.col-md-3'
-//        });
-//    }
-//};
-
 var debouncedRelayout = _.debounce(function(){
-    if ($gallery){
-        $gallery.masonry();
+    if ($(".images")){
+        console.log('relayout');
+        $(".images").masonry('reloadItems');
+        $(".images").masonry();
     }
-},500);
+},600);
 
 Template.home.onRendered(function(){
     $gallery = $(".images");
         
     $("#view-switcher a.full").click(function(e){
         e.preventDefault();
-        $(".image").removeClass('col-md-3');
-        $gallery.masonry('destroy'); 
+        $(".image").removeClass('m6 l4');
+        $(".images").masonry('destroy'); 
         Session.set('displayGrid', false);
     });
 
     $("#view-switcher a.grid").click(function(e){
         e.preventDefault();
-        $(".image").addClass('col-md-3');
+        $(".image").addClass('m6 l4');
         Session.set('displayGrid', true);
         
-        var $imgs = $('.thumb');
-        $gallery.imagesLoaded(function() {
-            $(".images").masonry({
-                itemSelector : '.image.col-md-3',
-                gutter: 20,
-                columnWidth: 15,
-                percentPosition: true
-            });
-        });
-    });
-
-});
-
-Template.image.onRendered(function() {
-  var $imgs = $('.image.col-md-3');
-  if ($gallery && $imgs) {
-    $imgs.imagesLoaded(function() {
-//        console.log($imgs);
-        var displayGrid = Session.get('displayGrid');
-        if (displayGrid){
-//            $imgs.imagesLoaded(function() {
-//                console.log($imgs[0]);
-                $gallery.masonry('destroy');
-                $gallery.masonry();
-//                $gallery.masonry('appended', $($imgs));
-//                $gallery.masonry('addItems', $($imgs);
-//                $gallery.masonry('reloadItems');
-//                debouncedRelayout();
+//        var $imgs = $('.thumb');
+//        $gallery.imagesLoaded(function() {
+//            $(".images").masonry({
+//                itemSelector : '.image.col-md-3',
+//                gutter: 20,
+//                columnWidth: 15,
+//                percentPosition: true
 //            });
-        }
+//        });
+        $gallery.masonry({
+                itemSelector: '.col.m6',
+                columnWidth: '.col.m6',
+//                gutter: 2,
+                percentPosition: true
+            });        
+        debouncedRelayout();
     });
-  }
+
 });
+
+Template.image.onRendered(function(){
+    $(".images").imagesLoaded(function(){
+        debouncedRelayout();
+    });
+});
+
+//Template.image.onRendered(function() {
+//  var $imgs = $('.image.col-md-3');
+//  if ($gallery && $imgs) {
+//    $imgs.imagesLoaded(function() {
+////        console.log($imgs);
+//        var displayGrid = Session.get('displayGrid');
+//        if (displayGrid){
+////            $imgs.imagesLoaded(function() {
+////                console.log($imgs[0]);
+//                $gallery.masonry('destroy');
+//                $gallery.masonry();
+////                $gallery.masonry('appended', $($imgs));
+////                $gallery.masonry('addItems', $($imgs);
+////                $gallery.masonry('reloadItems');
+////                debouncedRelayout();
+////            });
+//        }
+//    });
+//  }
+//});

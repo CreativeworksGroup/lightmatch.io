@@ -1,24 +1,24 @@
 <template name="home">
-    <!-- show drop zone if signed in -->
-    {{#if currentUser}}
-        {{> dropzone}}
-    {{/if}}
     <div id="uploading-dialog" class="zoom-anim-dialog mfp-hide">
         <h3>{{_ "uploading"}}</h3>
     </div>
-    <div class="container">
-        <div class="home jumbotron">
+    <div>
+        <!-- show drop zone if signed in -->
+        {{#if currentUser}}
+            {{> dropzone}}
+        {{/if}}
+        <div class="">
             <h1>{{_ "siteName"}}</h1>
-            <p>{{{_ "siteDescription"}}}</p>
+            <p class="flow-text center-align">{{{_ "siteDescription"}}}</p>
         </div>
-    <nav id="view-switcher">
-        <ul>
-            <li><a href="#full" class="full"><i class="fa fa-pause fa-2" aria-hidden="true"></i></a></li>
-            <li><a href="#grid" class="grid"><i class="fa fa-th fa-2" aria-hidden="true"></i></a></li>
+    <nav id="view-switcher" class="clearfix transparent z-depth-0">
+        <ul class="center-align">
+            <li><a href="#full" class="full grey-text text-darken-4 waves-effect"><i class="material-icons">view_stream</i></a></li>
+            <li><a href="#grid" class="grid grey-text text-darken-4 waves-effect"><i class="material-icons">view_module</i></a></li>
         </ul>
     </nav>
     
-    <div class="images">
+    <div class="images row">
         <div class="grid-sizer"></div>
         <!-- existing images -->
         {{#each images}}

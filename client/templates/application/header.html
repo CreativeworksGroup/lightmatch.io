@@ -1,31 +1,26 @@
 <template name="header">
-    <div class="container-fluid">      
-  <nav class="navbar navbar-default" role="navigation">    
-      <div class="navbar-header">        
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">          
-          <span class="sr-only">Toggle navigation</span>          
-          <span class="icon-bar"></span>          
-          <span class="icon-bar"></span>          
-          <span class="icon-bar"></span>        
-        </button>        
-        <a class="navbar-brand" href="{{pathFor 'home'}}">{{_ "siteName"}}</a>      
-      </div>      
-      <div class="collapse navbar-collapse" id="navigation">  
-        <ul class="nav navbar-nav navbar-right">
+  <nav class="grey darken-4">    
+      <div class="nav-wrapper">        
+            <a class="brand-logo waves-effect waves-light" href="{{pathFor 'home'}}">{{_ "siteName"}}</a>
+          <a href="#" data-activates="mobile-nav" class="button-collapse waves-effect waves-light"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
             {{#if currentUser}}
-            <li><a href="{{photoPath}}">{{_ "myPhotos"}}</a></li>
+            <li><a class="waves-effect waves-light" href="{{photoPath}}">{{_ "myPhotos"}}</a></li>
             {{/if}}
             {{> loginButtons}}
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown">{{_ "menuLanguage"}}<b class="caret"></b></a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><a href="#" class="lang" data-lang="en">English</a></li>
-                <li><a href="#" class="lang" data-lang="zh-CN">中文</a></li>          
+              <a class="dropdown-button waves-effect waves-light" href="#!" data-activates="dropdown-lang">{{_ "menuLanguage"}}<i class="material-icons right">arrow_drop_down</i></a>
+              <ul id="dropdown-lang" class="dropdown-content">
+                <li class="grey darken-3"><a href="#" class="lang white-text waves-effect waves-light" data-lang="en">English</a></li>
+                <li class="grey darken-3"><a href="#" class="lang white-text waves-effect waves-light" data-lang="zh-CN">中文</a></li>          
               </ul>
             </li>
-        </ul>      
-
-      </div>    
+          </ul>
+          <ul class="side-nav" id="mobile-nav">
+            {{#if currentUser}}
+            <li><a href="{{photoPath}}" class="waves-effect waves-light">{{_ "myPhotos"}}</a></li>
+            {{/if}}
+          </ul>          
+      </div>      
   </nav>
-    </div>  
 </template>

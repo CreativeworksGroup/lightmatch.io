@@ -11,10 +11,10 @@ Template.image.helpers({
     displayClass: function(){
         var displayGrid = Session.get('displayGrid');
         if (displayGrid){
-            return 'thumb col-md-3';
+            return 's12 m6 l4';
         }
         else{
-            return 'col-md-12';
+            return 's12';
         }
     },
     

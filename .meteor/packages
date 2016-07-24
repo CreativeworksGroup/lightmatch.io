@@ -5,7 +5,6 @@
 # but you can also edit it by hand.
 
 iron:router
-twbs:bootstrap
 sacha:spin
 chrismbeckett:toastr
 raix:ui-dropped-event
@@ -13,18 +12,15 @@ cfs:standard-packages
 cfs:gridfs
 reactive-var
 accounts-password
-ian:accounts-ui-bootstrap-3
 msavin:mongol
 momentjs:moment
 aldeed:simple-schema
 aldeed:collection2
 aldeed:autoform
-yogiben:autoform-tags
 cfs:graphicsmagick
 iyyang:cfs-aliyun
 isotope:isotope
 gorillastack:iron-router-gtm
-mrt:jquery-masonry
 meteor-base
 mobile-experience
 mongo
@@ -45,5 +41,11 @@ alanning:roles
 yogiben:admin
 dburles:collection-helpers
 gabrielengel:konecty-magnific-popup
-fortawesome:fontawesome
 tap:i18n
+materialize:materialize
+useraccounts:materialize
+gildaspk:autoform-materialize
+valedaemon:autoform-materialize-tags
+alisalaah:accounts-ui-material
+ixdi:material-design-iconic-font
+sjors:meteor-masonry

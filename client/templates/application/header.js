@@ -1,3 +1,6 @@
+Template.header.onRendered(function(){
+    $(".button-collapse").sideNav();
+});
 Template.header.helpers({
     'photoPath': function(){
         if (Meteor.user()){

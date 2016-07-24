@@ -4,11 +4,13 @@
 </head>
 
 <template name="layout">
-	<body>
+	<body class="grey lighten-5">
         <div>
-	  	{{> header}} 
-		  {{> yield}}
+	  	{{> header}}
+        <div id="main" class="container">
+            {{> yield}}
         </div>
         {{> footer}}
+        </div>
 	</body>
 </template>
