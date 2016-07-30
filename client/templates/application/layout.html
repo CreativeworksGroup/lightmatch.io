@@ -4,7 +4,7 @@
 </head>
 
 <template name="layout">
-	<body class="grey lighten-5">
+	<div class="grey lighten-5">
         <div>
 	  	{{> header}}
         <div id="main" class="container">
@@ -12,5 +12,9 @@
         </div>
         {{> footer}}
         </div>
-	</body>
+	</div>
+</template>
+
+<template name="singleImage">
+        {{> yield}}
 </template>

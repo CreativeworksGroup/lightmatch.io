@@ -56,11 +56,18 @@ Template.image.events({
             $set: { published: ! this.published },
         });                      
     },
-    'click a.thumbnail': function(e){
-        if (!this.downloadCount)
-            this.downloadCount = 0;
-        Images.update(this._id,{
-            $set: { downloadCount: this.downloadCount+1 } 
-        });
+    'click .card-image': function(e){
+        console.log(e.target);
+        NProgress.start();
+        Router.go('/photo/'+$(e.target).data("imageid"));
+        NProgress.done();
     }
+//    ,
+//    'click a.thumbnail': function(e){
+//        if (!this.downloadCount)
+//            this.downloadCount = 0;
+//        Images.update(this._id,{
+//            $set: { downloadCount: this.downloadCount+1 } 
+//        });
+//    }
 });

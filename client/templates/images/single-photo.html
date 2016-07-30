@@ -1,0 +1,9 @@
+<template name="singlePhoto">
+    <div id="photo-container" style="background-image:url({{OSSUrl store='thumbs'}});">
+        <nav class="top grey darken-4 ">
+            <div class="author left valign">{{_ "photoBy"}} <a href="/{{author.username}}">{{author.profile.firstName}} {{author.profile.lastName}}</a></div>
+            <a href="{{OSSUrl store='images'}}" target="_blank" class="download right waves-effect white-text"><i class="material-icons">file_download</i></a>
+            <a href="#" class="right waves-effect white-text"><i class="material-icons">favorite</i></a>
+        </nav>
+    </div>
+</template>

@@ -3,11 +3,7 @@
         <div class="card">
             <!-- the image -->    
             <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="{{OSSUrl store='thumbs'}}" alt="" />
-            </div>
-            <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
+                    <img class="activator" src="{{OSSUrl store='thumbs'}}" data-imageId="{{_id}}" alt="" />
             </div>
             <div class="card-action">
                 {{#if ownImage}}
@@ -18,9 +14,9 @@
                     <a class="user-link" href="{{pathFor route='userPage' userSlug=authorname}}">{{publisher}}</a> / 
                     <span class="count">{{_ "downloadCount" count=downloadCount}}</span>
                     {{#if isAdmin}}
-                    <div class="pull-right">
-                        <label for="{{id}}">{{_ "featured"}}</label>
-                        <input type="checkbox" id="{{id}}" checked="{{published}}" class="toggle-published filled-in" />
+                    <div class="right">
+                        <label for="photo-{{_id}}">{{_ "featured"}}</label>
+                        <input type="checkbox" id="photo-{{_id}}" checked="{{published}}" class="toggle-published filled-in" />
                     </div>
                     {{/if}}
             </div>

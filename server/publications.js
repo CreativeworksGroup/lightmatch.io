@@ -18,6 +18,10 @@ Meteor.publish('images', function(limit, username){
     });
 });
 
+Meteor.publish('image', function(id){
+    check(id, String);
+    return Images.find({_id: id});
+});
 
 // The user fields we are willing to publish.
 const USER_FIELDS = {
