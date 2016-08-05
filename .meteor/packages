@@ -11,7 +11,6 @@ raix:ui-dropped-event
 cfs:standard-packages
 cfs:gridfs
 reactive-var@1.0.10
-accounts-password@1.2.12
 msavin:mongol
 momentjs:moment
 aldeed:simple-schema
@@ -43,10 +42,14 @@ dburles:collection-helpers
 gabrielengel:konecty-magnific-popup
 tap:i18n
 materialize:materialize
-useraccounts:materialize
 gildaspk:autoform-materialize
 valedaemon:autoform-materialize-tags
-alisalaah:accounts-ui-material
 ixdi:material-design-iconic-font
 sjors:meteor-masonry
 mrt:nprogress
+useraccounts:materialize
+useraccounts:iron-routing
+accounts-facebook
+service-configuration
+accounts-password
+accounts-ui

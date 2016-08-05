@@ -3,6 +3,8 @@ AdminConfig = {
     skin: 'yellow-light',
     nonAdminRedirectRoute: 'entrySignIn',
 }
-Accounts.config({
-//    forbidClientAccountCreation : Meteor.settings.public.forbidClientAccountCreation
-});
+
+//Accounts.config({
+////    forbidClientAccountCreation : Meteor.settings.public.forbidClientAccountCreation
+//    enablePasswordChange: true
+//});

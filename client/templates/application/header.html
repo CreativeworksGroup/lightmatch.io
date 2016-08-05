@@ -7,7 +7,7 @@
             {{#if currentUser}}
             <li><a class="waves-effect waves-light" href="{{photoPath}}">{{_ "myPhotos"}}</a></li>
             {{/if}}
-            {{> loginButtons}}
+            <li>{{> atNavButton}}</li>
             <li class="dropdown">
               <a class="dropdown-button waves-effect waves-light" href="#!" data-activates="dropdown-lang">{{_ "menuLanguage"}}<i class="material-icons right">arrow_drop_down</i></a>
               <ul id="dropdown-lang" class="dropdown-content">
