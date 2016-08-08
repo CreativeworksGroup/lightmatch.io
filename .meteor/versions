@@ -1,6 +1,4 @@
 accounts-base@1.2.9
-accounts-facebook@1.0.10
-accounts-oauth@1.1.13
 accounts-password@1.2.12
 accounts-ui@1.1.9
 accounts-ui-unstyled@1.1.12
@@ -60,7 +58,6 @@ ecmascript@0.5.7
 ecmascript-runtime@0.3.12
 ejson@1.0.12
 email@1.1.16
-facebook@1.2.8
 fastclick@1.0.12
 gabrielengel:konecty-magnific-popup@0.9.9
 geojson-utils@1.0.9
@@ -114,8 +111,6 @@ mrt:nprogress@0.2.0
 msavin:mongol@1.6.2
 npm-bcrypt@0.8.7
 npm-mongo@1.5.45
-oauth@1.1.11
-oauth2@1.1.10
 observe-sequence@1.0.12
 ordered-dict@1.0.8
 promise@0.8.3

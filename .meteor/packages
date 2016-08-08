@@ -49,7 +49,6 @@ sjors:meteor-masonry
 mrt:nprogress
 useraccounts:materialize
 useraccounts:iron-routing
-accounts-facebook
 service-configuration
 accounts-password
 accounts-ui

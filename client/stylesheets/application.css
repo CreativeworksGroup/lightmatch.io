@@ -17,8 +17,6 @@ body {
 /*    letter-spacing: 0.1em;*/
 }
 
-
-
 html[lang="zh-CN"]{
     letter-spacing: 0.1em;
 }
@@ -30,6 +28,10 @@ h1,h2,h3,h4{
 h1 {
     font-size: 3.2rem;
     text-align: center;
+}
+
+#main{
+    padding-top: 2em;
 }
 
 .page{
@@ -74,4 +76,9 @@ nav.subscribe{
     max-width: 400px;
     margin: 40px auto;
     position: relative;
+}
+
+#submit-button,
+#submit-button-nologin{
+    float:none;
 }
