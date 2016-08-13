@@ -1,7 +1,7 @@
 AdminConfig = { 
-    adminEmails: ['kwun@creativeworks.com.hk'],
+    adminEmails: ['kopanda@gmail.com'],
     skin: 'yellow-light',
-    nonAdminRedirectRoute: 'entrySignIn',
+    nonAdminRedirectRoute: 'signIn',
 }
 
 //Accounts.config({
