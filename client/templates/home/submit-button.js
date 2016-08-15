@@ -8,6 +8,7 @@ Template.submitButton.events({
             newFile.userId = user._id;
             newFile.published = false;
             newFile.downloadCount = 0;
+             newFile.likes = [];
             Images.insert(newFile, function(error, fileObj){
                 if (error){
                     toastr.error("上载失败⋯⋯ 请重新上载。<br/>Upload failed... please try again.");

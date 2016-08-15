@@ -41,7 +41,7 @@ Images.allow({
     insert: function(userId, doc) { return userId != null; },
 //    update: function(userId, image) { return userId === image.userId; },
     update: function(userId, image, fields, modifier) { 
-        return ((userId === image.userId) || _.contains(fields, 'downloadCount') || Roles.userIsInRole(userId, ['admin']));
+        return ((userId === image.userId) || _.contains(fields, 'downloadCount') || _.contains(fields, 'likes') || Roles.userIsInRole(userId, ['admin']));
     },
     remove: function(userId, image) { return ((userId === image.userId) || Roles.userIsInRole(userId, ['admin'])); },
     download: function() { return true; }

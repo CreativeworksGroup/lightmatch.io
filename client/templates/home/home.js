@@ -14,6 +14,8 @@ Template.home.created = function(){
 
             }
         }});
+        
+//        Meteor.subscribe('profilePictures');
     });
     
     Session.set('displayGrid', false);

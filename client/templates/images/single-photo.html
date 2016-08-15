@@ -1,9 +1,14 @@
 <template name="singlePhoto">
     <div id="photo-container" style="background-image:url('{{OSSUrl store='thumbs'}}');">
-        <nav class="top grey darken-4 ">
-            <div class="author left valign">{{_ "photoBy"}} <a href="/{{author.username}}">{{author.profile.firstName}} {{author.profile.lastName}}</a></div>
-            <a href="{{OSSUrl store='images'}}" target="_blank" class="download right waves-effect white-text"><i class="material-icons">file_download</i></a>
-            <a href="#" class="right waves-effect white-text"><i class="material-icons">favorite</i></a>
+        <nav class="top z-depth-0 row valign-wrapper">
+            <div class="col s6">
+                    <div class="author left valign"><a href="/{{author.username}}">                    <img src="/img/profile.png" class="profile circle responsive-img" />
+ {{author.profile.firstName}} {{author.profile.lastName}}</a></div>
+            </div>    
+            <div class="col s6">
+                <a href="{{OSSUrl store='images'}}" target="_blank" class="download right waves-effect white-text"><i class="material-icons">file_download</i> <span class="value">{{downloadCount}}</span></a>
+                <a href="#" class="right waves-effect white-text like {{#if liked}}liked{{/if}}"><i class="material-icons">favorite</i> <span class="value">{{likes.length}}</span></a>
+            </div>    
         </nav>
     </div>
 </template>

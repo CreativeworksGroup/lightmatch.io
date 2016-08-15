@@ -43,7 +43,6 @@ gabrielengel:konecty-magnific-popup
 tap:i18n
 materialize:materialize
 gildaspk:autoform-materialize
-valedaemon:autoform-materialize-tags
 ixdi:material-design-iconic-font
 sjors:meteor-masonry
 mrt:nprogress
@@ -52,3 +51,5 @@ useraccounts:iron-routing
 service-configuration
 accounts-password
 accounts-ui
+benan789:materialize-tagsinput
+yogiben:autoform-file

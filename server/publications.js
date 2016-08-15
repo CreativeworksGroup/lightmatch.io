@@ -37,3 +37,7 @@ Meteor.publish('singleUser', function (userId) {
   // Publish a single user - make sure only allowed fields are sent.
   return Meteor.users.find(userId, { fields: USER_FIELDS });
 });
+
+Meteor.publish('profilePictures', function (){
+   ProfilePictures.find(); 
+});
