@@ -5,7 +5,7 @@ Template.singlePhoto.helpers({
         return author;
     },
     'liked': function(){
-        liked = Images.findOne({likes:Meteor.userId()});
+        liked = Images.findOne({_id: this._id, likes:Meteor.userId()});
         return liked;
     }
 });
@@ -26,14 +26,12 @@ Template.singlePhoto.events({
             });
         }
         else {
-            if (Images.findOne({likes:Meteor.userId()})){
-                console.log('has like');
+            if (Images.findOne({_id: this._id, likes:Meteor.userId()})){
                 Images.update(this._id,{
                     $pull: { likes: Meteor.userId()}
                 });
             }
             else{
-                console.log('no like');
                 Images.update(this._id,{
                     $addToSet: { likes: Meteor.userId()}
                 });

@@ -11,7 +11,6 @@ Template.home.created = function(){
             var displayGrid = Session.get('displayGrid');
             if (displayGrid){
                 debouncedRelayout();
-
             }
         }});
         

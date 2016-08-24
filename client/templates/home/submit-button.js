@@ -9,7 +9,7 @@ Template.submitButton.events({
             newFile.published = false;
             newFile.downloadCount = 0;
              newFile.likes = [];
-            Images.insert(newFile, function(error, fileObj){
+            var imgObj = Images.insert(newFile, function(error, fileObj){
                 if (error){
                     toastr.error("上载失败⋯⋯ 请重新上载。<br/>Upload failed... please try again.");
                     console.log(error);
@@ -26,10 +26,14 @@ Template.submitButton.events({
                     });
                 }
             });
+             
+             
             
             newFile.once("uploaded", function(){
                 toastr.success("上载成功，正在制作缩图，你很快可在「我的相片」看到。<br/>Upload success! Generating thumbnail... You check this it out from \"My Photo\" soon.");
                 $.magnificPopup.close();
+//                console.log(imageId);
+                Router.go('/photo/'+imgObj._id+'/edit/');
             })
         });          
        }
