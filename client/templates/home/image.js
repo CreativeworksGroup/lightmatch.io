@@ -57,7 +57,6 @@ Template.image.events({
         });                      
     },
     'click .card-image': function(e){
-        console.log(e.target);
         NProgress.start();
         Router.go('/photo/'+$(e.target).data("imageid"));
         NProgress.done();

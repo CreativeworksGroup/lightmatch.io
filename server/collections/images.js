@@ -34,7 +34,7 @@ var thumbStore = new FS.Store.OSS("thumbs", {
   },
   transformWrite: function(fileObj, readStream, writeStream) {          
       gm(readStream, fileObj.name()).identify("%[EXIF:*]", function(err, format){
-//          Fiber(function(){fileObj.update({$set: {'exif' : {'ImageWidth': format}}})}).run();
+
           var tmpExif = format.split("\n");
           var exif = {};
           for (i=0; i<tmpExif.length; i++){
@@ -42,12 +42,17 @@ var thumbStore = new FS.Store.OSS("thumbs", {
               exif[data[0]] = data[1];
           }
           
-          var lat = exif.GPSLatitude.split(",");
-          var lng = exif.GPSLongitude.split(",");
-        
-          lat = ConvertDMSToDD(lat[0].substr(0,lat[0].length-2),lat[1].substr(0,lat[1].length-2),lat[2].substr(0,lat[2].length-4), exif.GPSLatitudeRef);
-          lng = ConvertDMSToDD(lng[0].substr(0,lng[0].length-2),lng[1].substr(0,lng[1].length-2),lng[2].substr(0,lng[2].length-4), exif.GPSLongitudeRef);
+          var lat = '';
+          var lng = '';
+          
+          if (typeof exif.GPSLatitude != "undefined"){
+              lat = exif.GPSLatitude.split(",");
+              lng = exif.GPSLongitude.split(",");
 
+              lat = ConvertDMSToDD(lat[0].substr(0,lat[0].length-2),lat[1].substr(0,lat[1].length-2),lat[2].substr(0,lat[2].length-4), exif.GPSLatitudeRef);
+              lng = ConvertDMSToDD(lng[0].substr(0,lng[0].length-2),lng[1].substr(0,lng[1].length-2),lng[2].substr(0,lng[2].length-4), exif.GPSLongitudeRef);
+          }
+          
           Fiber(function(){fileObj.update({
               $set: {
                   'exif' : exif, 
