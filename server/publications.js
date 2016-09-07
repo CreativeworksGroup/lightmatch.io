@@ -41,3 +41,7 @@ Meteor.publish('singleUser', function (userId) {
 Meteor.publish('profilePictures', function (){
    ProfilePictures.find(); 
 });
+
+Meteor.publish('avatar', function (){
+   avatar.find(); 
+});
