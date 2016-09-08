@@ -1,14 +1,26 @@
 <template name="submitPhoto">
-    <div id="photo-container" style="background-image:url('{{OSSUrl store='thumbs'}}');">
-        <div class="row">
-            <form class="col s12 tags-form">
-                <div class="input-field col s12">
-                      <input placeholder="Tags" id="photo-tags" type="text" data-role="materialtags">
+    <div class="row">
+        <h3 class="center-align">Tell us more about your photo</h3>
+        <div class="photo col m6">
+            <img src="{{OSSUrl store='thumbs'}}" class="responsive-img"/>
+        </div>
+        <form class="col m6 tags-form">
+            <div class="input-field col s12">
+                  <input id="photo-tags" type="text" data-role="materialtags" required="required">
+                    <label for="photo-tags">Tags</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Description</label>
+            </div>
+            <div class="input-field col s12">
+                <div class="map-container">
+                    {{> googleMap name="exampleMap" options=exampleMapOptions}}
                 </div>
-                <div class="input-field col s12">
-                      <button class="btn" id="save-tags">Save</button>
-                </div>
-            </form>
-          </div>        
-    </div>
+            </div>
+            <div class="input-field col s12">
+                  <button class="btn" id="save-tags">Save</button>
+            </div>
+        </form>
+      </div> 
 </template>

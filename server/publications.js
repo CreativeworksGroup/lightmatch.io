@@ -1,4 +1,4 @@
-Meteor.publish('images', function(limit, username){
+Meteor.publish('images', function(limit, username, searchQuery){
     check(limit, Number);
     
     var findQuery = {published:true};
@@ -12,6 +12,10 @@ Meteor.publish('images', function(limit, username){
         findQuery = {userId: author._id}
     }
     
+    if (searchQuery){
+        check(searchQuery, String);
+        
+    }
     return Images.find(findQuery, {
         limit: limit,
         sort: {uploadedAt: -1}
