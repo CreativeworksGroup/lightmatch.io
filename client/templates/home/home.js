@@ -7,7 +7,7 @@ Template.home.created = function(){
     self.limit.set(parseInt(Meteor.settings.public.recordsPerPage));
     
     Tracker.autorun(function(){
-        Meteor.subscribe('images', self.limit.get(), Router.current().params.userSlug, {onReady:function(){
+        Meteor.subscribe('images', self.limit.get(), Router.current().params.userSlug, Router.current().params.searchQuery, {onReady:function(){
             var displayGrid = Session.get('displayGrid');
             if (displayGrid){
                 debouncedRelayout();
@@ -37,6 +37,15 @@ Template.home.helpers({
     }
 });
 
+Template.home.events({
+   'submit form#search-form': function(e){
+       e.preventDefault();
+       
+       Router.go('/tag/'+$("input#search").val());
+   }
+});
+       
+       
 var incrementLimit = function(templateInstance){
     var newLimit = templateInstance.limit.get() + parseInt(Meteor.settings.public.recordsPerPage);
     templateInstance.limit.set(newLimit);
