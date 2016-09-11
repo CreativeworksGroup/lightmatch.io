@@ -54,6 +54,39 @@ a.liked{
     text-decoration: none;
 }
 
+#photo-container footer{
+    padding: 0 1em;
+    background: -moz-linear-gradient(bottom,  rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(bottom,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to top,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#59000000',GradientType=0 );
+    height:64px;
+    line-height: 64px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#photo-container footer i{
+    position: relative;
+    top: 7px;
+}
+
+#photo-container footer .info i{
+    cursor: pointer;
+}
+
+#photo-container footer .row{
+    margin: 0;
+}
+
+#photo-container .modal-content h6{
+    font-weight: bold;
+    color: #999;
+    text-shadow: 1px 1px 0px #eee;    
+}
+
 img.profile{
     max-height: 2.5rem;
     margin-right: 0.5rem;

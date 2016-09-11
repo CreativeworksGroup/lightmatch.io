@@ -1,3 +1,7 @@
+Template.singlePhoto.rendered = function(){
+    $(".modal-trigger").leanModal();
+}
+
 Template.singlePhoto.helpers({
     'author': function(){
         Meteor.subscribe('singleUser', this.userId);
@@ -7,6 +11,11 @@ Template.singlePhoto.helpers({
     'liked': function(){
         liked = Images.findOne({_id: this._id, likes:Meteor.userId()});
         return liked;
+    },
+    postDate: function(){
+       //return moment(this.uploadedAt).format('MMMM Do YYYY, h:mm:ss a');
+
+       return moment(this.uploadedAt).format('LL');
     }
 });
 

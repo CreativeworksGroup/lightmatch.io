@@ -1,7 +1,16 @@
 Fiber = Npm.require('fibers');
 
 function ConvertDMSToDD(degrees, minutes, seconds, direction) {
-    var dd = parseInt(degrees) + parseInt(minutes)/60 + parseInt(seconds)/(60*60);
+    if (isNaN(degrees)){
+        degrees = eval(degrees);
+    }
+    if (isNaN(minutes)){
+        minutes = eval(minutes);
+    }
+    if (isNaN(seconds)){
+        seconds = eval(seconds);
+    }
+    var dd = parseFloat(degrees) + parseFloat(minutes)/60 + parseFloat(seconds)/(60*60);
     if (direction == "S" || direction == "W") {
         dd = dd * -1;
     } // Don't do anything for N or E
@@ -49,8 +58,8 @@ var thumbStore = new FS.Store.OSS("thumbs", {
               lat = exif.GPSLatitude.split(",");
               lng = exif.GPSLongitude.split(",");
 
-              lat = ConvertDMSToDD(lat[0].substr(0,lat[0].length-2),lat[1].substr(0,lat[1].length-2),lat[2].substr(0,lat[2].length-4), exif.GPSLatitudeRef);
-              lng = ConvertDMSToDD(lng[0].substr(0,lng[0].length-2),lng[1].substr(0,lng[1].length-2),lng[2].substr(0,lng[2].length-4), exif.GPSLongitudeRef);
+              lat = ConvertDMSToDD(lat[0],lat[1],lat[2], exif.GPSLatitudeRef);
+              lng = ConvertDMSToDD(lng[0],lng[1],lng[2], exif.GPSLongitudeRef);
           }
           
           Fiber(function(){fileObj.update({

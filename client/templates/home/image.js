@@ -59,6 +59,16 @@ Template.image.events({
     'click .card-image': function(e){
         NProgress.start();
         Router.go('/photo/'+$(e.target).data("imageid"));
+        if (!this.views){
+            Images.update(this._id,{
+                $set: { views: 1}
+            });
+        }
+        else{
+            Images.update(this._id,{
+                $set: { views: this.views+1 }
+            });
+        }
         NProgress.done();
     }
 //    ,

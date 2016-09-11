@@ -34,12 +34,15 @@ Template.submitPhoto.events({
                     lat: GoogleMaps.maps.photoLocation.instance.center.lat(),
                     lng: GoogleMaps.maps.photoLocation.instance.center.lng()
                 },
+                place: $("#google-place").val(),
                 submitted: true
             }
         }, null, function(){
-            console.log("image updated.");
             Router.go('/photo/submit/success');
         });
+    },
+    'submit form': function(e){
+        e.preventDefault();
     }
 });
 
@@ -73,13 +76,30 @@ Template.submitPhoto.onCreated(function () {
             map: map.instance
         });
 
+        var geocoder = new google.maps.Geocoder;
+        var infowindow = new google.maps.InfoWindow;
+        geocoder.geocode({'location': map.options.center}, function(results, status) {
+          if (status === 'OK') {
+            if (results[1]) {
+              map.instance.setZoom(11);
+                $("#google-place").val(results[1].formatted_address);
+                Materialize.updateTextFields();
+                infowindow.setContent(results[1].formatted_address);
+                infowindow.open(map.instance, marker);
+
+            } else {
+              window.alert('No results found');
+            }
+          } else {
+            window.alert('Geocoder failed due to: ' + status);
+          }
+        });
         map.instance.addListener('bounds_changed', function () {
             searchBox.setBounds(map.instance.getBounds());
         });
 
         var input = document.getElementById('google-place');
         var searchBox = new google.maps.places.SearchBox(input);
-        //      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         searchBox.addListener('places_changed', function () {
             var places = searchBox.getPlaces();
 
@@ -93,6 +113,7 @@ Template.submitPhoto.onCreated(function () {
                     console.log("Returned place contains no geometry");
                     return;
                 }
+                marker.setMap(null);
                 marker = new google.maps.Marker({
                     map: map.instance,
                     title: place.name,
