@@ -2,7 +2,15 @@
     <div id="photo-container" style="background-image:url('{{OSSUrl store='thumbs'}}');">
         <nav class="top z-depth-0 row valign-wrapper">
             <div class="col s5">
-                    <div class="author left valign"><a href="/{{author.username}}">                    <img src="/img/profile.png" class="profile circle responsive-img" />
+                    <div class="author left valign"><a href="/{{author.username}}">
+                        {{#if hasAvatar}}
+                        {{#with FS.GetFile "images" author.profile.avatar}}
+                        <img src={{this.url}} class="profile circle responsive-img" />
+                        {{/with}}
+                        {{else}}
+                        <img src="/img/profile.svg" class="profile circle responsive-img" />
+                        {{/if}}
+                        
  {{author.profile.firstName}} {{author.profile.lastName}}</a></div>
             </div>
             <div class="col s2 center-align">

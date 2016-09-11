@@ -42,10 +42,7 @@ Meteor.publish('singleUser', function (userId) {
   return Meteor.users.find(userId, { fields: USER_FIELDS });
 });
 
-Meteor.publish('profilePictures', function (){
-   ProfilePictures.find(); 
-});
-
 Meteor.publish('avatar', function (){
-   avatar.find(); 
+//    check(userId, String);
+    return avatar.find(); 
 });

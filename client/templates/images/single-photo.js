@@ -5,6 +5,7 @@ Template.singlePhoto.rendered = function(){
 Template.singlePhoto.helpers({
     'author': function(){
         Meteor.subscribe('singleUser', this.userId);
+        Meteor.subscribe('avatar');
         var author = Meteor.users.findOne({ _id: this.userId});
         return author;
     },
@@ -13,9 +14,16 @@ Template.singlePhoto.helpers({
         return liked;
     },
     postDate: function(){
-       //return moment(this.uploadedAt).format('MMMM Do YYYY, h:mm:ss a');
-
-       return moment(this.uploadedAt).format('LL');
+        return moment(this.uploadedAt).format('LL');
+    },
+    hasAvatar: function(){
+        Meteor.subscribe('singleUser', this.userId);
+        var author = Meteor.users.findOne({_id: this.userId});
+        console.log(author);
+        if (author.profile.avatar != undefined){
+            return true;
+        }
+        return false;
     }
 });
 

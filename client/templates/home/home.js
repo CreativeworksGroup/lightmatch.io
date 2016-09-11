@@ -1,5 +1,9 @@
 var $gallery = $(".images");
 
+Template.registerHelper('_', function () {
+    return _;
+}); 
+
 Template.home.created = function(){
     var self = this;
     
@@ -83,7 +87,9 @@ Template.home.onRendered(function(){
 });
 
 Template.image.onRendered(function(){
-    $(".images").imagesLoaded(function(){
-        debouncedRelayout();
-    });
+//    $(".images").imagesLoaded(function(){
+//        debouncedRelayout();
+//    });
+    
+    $('.dropdown-button').dropdown();
 });
