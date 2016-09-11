@@ -1,5 +1,5 @@
 AdminConfig = { 
-    adminEmails: ['kopanda@gmail.com'],
+    adminEmails: ['kwun@creativeworks.com.hk'],
     skin: 'yellow-light',
     nonAdminRedirectRoute: 'signIn',
 }

@@ -91,6 +91,7 @@ livedata@1.0.18
 localstorage@1.0.11
 logging@1.1.15
 materialize:materialize@0.97.6
+mdg:geolocation@1.3.0
 mdg:validation-error@0.5.1
 meteor@1.2.17
 meteor-base@1.0.4

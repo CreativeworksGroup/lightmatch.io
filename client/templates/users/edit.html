@@ -1,11 +1,10 @@
 <template name="editProfile">
     <div class="container">
-        {{#autoForm collection='Meteor.users' doc=currentUser type='update' id='accountForm'}}
+        {{#autoForm collection="Meteor.users" doc=currentUser type="update" id="updateProfileForm"}}
             {{> afQuickField name='username'}}
             {{> afQuickField name='emails.0.address' label='Email Address'}}
             {{> afQuickField name='profile'}}
-            {{> afQuickField name="avatar"}}
-            <button type='submit' class="btn btn-primary">{{_ "saveProfile"}}</button>
+            <button type="submit" class="btn btn-primary">{{_ "saveProfile"}}</button>
         {{/autoForm}}
     </div>
 </template>

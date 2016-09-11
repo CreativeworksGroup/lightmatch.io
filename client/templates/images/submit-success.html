@@ -1,0 +1,12 @@
+<template name="submitSuccess">
+    <div class="row">
+        <div class="col s12">
+            <h1>Bravo! Your photo has been submitted successfully!</h1>
+            {{#if currentUser}}
+                {{> submitButton}}
+            {{else}}
+                {{> submitButtonNoLogin}}
+            {{/if}}
+        </div>
+    </div>
+</template>

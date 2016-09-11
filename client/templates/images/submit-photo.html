@@ -10,16 +10,20 @@
                     <label for="photo-tags">Tags</label>
             </div>
             <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">Description</label>
+                <textarea id="description" class="materialize-textarea"></textarea>
+                <label for="description">Description</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="google-place" type="text" placeholder=""/>
+                <label>Where was it taken?</label>
             </div>
             <div class="input-field col s12">
                 <div class="map-container">
-                    {{> googleMap name="exampleMap" options=exampleMapOptions}}
+                    {{> googleMap name="photoLocation" options=mapOptions}}
                 </div>
             </div>
             <div class="input-field col s12">
-                  <button class="btn" id="save-tags">Save</button>
+                  <button class="btn" id="save-detail">Save</button>
             </div>
         </form>
       </div> 
