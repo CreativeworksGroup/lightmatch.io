@@ -54,6 +54,6 @@ accounts-ui@1.1.9
 benan789:materialize-tagsinput
 yogiben:autoform-file
 shell-server
-dburles:google-maps
 mdg:geolocation
 cfs:ui
+lightmatches:google-maps
