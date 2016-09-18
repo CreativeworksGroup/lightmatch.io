@@ -13,13 +13,13 @@
                 <textarea id="description" class="materialize-textarea"></textarea>
                 <label for="description">Description</label>
             </div>
-            <div class="input-field col s12">
-                <input id="google-place" type="text" placeholder=""/>
+            <div class="input-field col s12" id="search-box-container">
+                <input id="search-box" type="text" placeholder=""/>
                 <label>Where was it taken?</label>
             </div>
             <div class="input-field col s12">
-                <div class="map-container">
-                    {{> googleMap name="photoLocation" options=mapOptions}}
+                <div class="map-container" id="myMap" data-lat="{{mapOptions.lat}}" data-lng="{{mapOptions.lng}}">
+                    
                 </div>
             </div>
             <div class="input-field col s12">

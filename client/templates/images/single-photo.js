@@ -19,7 +19,6 @@ Template.singlePhoto.helpers({
     hasAvatar: function(){
         Meteor.subscribe('singleUser', this.userId);
         var author = Meteor.users.findOne({_id: this.userId});
-        console.log(author);
         if (author.profile.avatar != undefined){
             return true;
         }

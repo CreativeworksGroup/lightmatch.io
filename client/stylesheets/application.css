@@ -98,3 +98,7 @@ a#back-to-home {
 form#search-form, form#search-form .input-field{
     height: 100%;
 }
+
+.materialize-tags input{
+    min-width: 100px !important;
+}

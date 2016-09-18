@@ -7,6 +7,10 @@
 */
 }
 
+.image .delete-image{
+    cursor: pointer;
+}
+
 #photo-container{
     background-size: cover;
     min-height: 100%;
