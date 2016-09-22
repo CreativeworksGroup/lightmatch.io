@@ -1,6 +1,6 @@
 <template name="editProfile">
     <div class="container">
-        {{#autoForm collection="Meteor.users" doc=currentUser type="update" id="updateProfileForm"}}
+        {{#autoForm collection="Meteor.users" doc=currentUser type="update" id="updateProfileForm" meteormethod="editProfileMethod"}}
             {{> afQuickField name='username'}}
             {{> afQuickField name='emails.0.address' label='Email Address'}}
             {{> afQuickField name='profile'}}
