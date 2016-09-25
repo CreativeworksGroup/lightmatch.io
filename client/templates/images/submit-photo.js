@@ -76,7 +76,7 @@ Template.submitPhoto.events({
         Images.update(imgId, {
             $addToSet: {
                 tags: {
-                    $each: tags
+                    $each: tags.map(function(x){return x.toLowerCase();})
                 }
             },
             $set: {

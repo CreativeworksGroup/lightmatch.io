@@ -14,7 +14,7 @@ Meteor.publish('images', function(limit, username, searchQuery){
     
     if (searchQuery){
         check(searchQuery, String);
-        findQuery = {tags: searchQuery};
+        findQuery = {tags: searchQuery.toLowerCase(), published:true};
     }
     return Images.find(findQuery, {
         limit: limit,

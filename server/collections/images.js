@@ -60,8 +60,6 @@ var thumbStore = new FS.Store.OSS("thumbs", {
 
               lat = ConvertDMSToDD(lat[0],lat[1],lat[2], exif.GPSLatitudeRef) || 0;
               lng = ConvertDMSToDD(lng[0],lng[1],lng[2], exif.GPSLongitudeRef) || 0;
-              console.log(lat);
-              console.log(lng);
           }
           
           Fiber(function(){fileObj.update({
