@@ -1,9 +1,20 @@
 var map = {};
 
 initMap = function(){
+    var lat = $("#myMap").data('lat');
+    var lng = $("#myMap").data('lng');
+    
+    if (!lat){
+        lat = 0;
+    }
+    
+    if (!lng){
+        lng = 0;
+    }
+    
     map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
         credentials: 'Ar43VQmt00cBTA9slFkS3ePobQ0XzdiZmE-EPqP8SvrOzEHeAnjDtsfJEF3AKB3f',
-        center: new Microsoft.Maps.Location($("#myMap").data('lat'), $("#myMap").data('lng')),
+        center: new Microsoft.Maps.Location(lat, lng),
 //        mapTypeId: Microsoft.Maps.MapTypeId.aerial,
         zoom: 10
     });

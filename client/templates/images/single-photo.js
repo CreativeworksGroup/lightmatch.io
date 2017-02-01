@@ -1,6 +1,6 @@
-Template.singlePhoto.rendered = function(){
-    $(".modal-trigger").leanModal();
-}
+Template.singlePhoto.onRendered(function(){
+    $(".modal-trigger").modal();
+});
 
 Template.singlePhoto.helpers({
     'author': function(){

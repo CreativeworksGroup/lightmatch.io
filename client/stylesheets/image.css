@@ -95,4 +95,5 @@ img.profile, svg.profile{
     max-height: 2.5rem;
     margin-right: 0.5rem;
     box-shadow: 0px 0px 1px rgba(0,0,0,0.45);
+    vertical-align: middle;
 }

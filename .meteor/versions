@@ -59,7 +59,7 @@ ecmascript-runtime@0.3.15
 ejson@1.0.13
 email@1.1.18
 fastclick@1.0.13
-fortawesome:fontawesome@4.5.0
+fortawesome:fontawesome@4.7.0
 fourseven:scss@3.13.0
 gabrielengel:konecty-magnific-popup@0.9.9
 geojson-utils@1.0.10
@@ -84,7 +84,7 @@ ixdi:material-design-iconic-font@2.1.5
 iyyang:cfs-aliyun@0.1.2
 jquery@1.11.10
 lai:collection-extensions@0.2.1_1
-launch-screen@1.0.12
+launch-screen@1.1.0
 less@2.7.8
 livedata@1.0.18
 localstorage@1.0.12
