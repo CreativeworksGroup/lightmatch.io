@@ -2,15 +2,15 @@
 Meteor.startup(function() {
   // Add Facebook configuration entry
 
-//  ServiceConfiguration.configurations.update(
-//    { service: "facebook" },
-//    { $set: {
-//        appId: "1758802494400879",
-//        secret: "ce650fc915fc64edc37cc5c9c61cc03f"
-//      }
-//    },
-//    { upsert: true }
-//  );
+  ServiceConfiguration.configurations.update(
+    { service: "facebook" },
+    { $set: {
+        appId: "1758802494400879",
+        secret: "ce650fc915fc64edc37cc5c9c61cc03f"
+      }
+    },
+    { upsert: true }
+  );
 
 
   // Add GitHub configuration entry

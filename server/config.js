@@ -10,4 +10,4 @@ Accounts.emailTemplates.resetPassword.subject = function (user) {
     return "Reset your password at LightMatch.io";
 };
 
-Houston.add_collection(Meteor.users);
+//Houston.add_collection(Meteor.users);
