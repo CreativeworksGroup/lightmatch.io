@@ -1,9 +1,9 @@
 @import url(https://fonts.lug.ustc.edu.cn/icon?family=Material+Icons);
 @font-face {font-family: "lm-logo";
-  src: url('/fonts/lm-logo.eot?t=1475034955'); /* IE9*/
-  src: url('/fonts/lm-logo.eot?t=1475034955#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('/fonts/lm-logo.woff?t=1475034955') format('woff'), /* chrome, firefox */
-  url('/fonts/lm-logo.ttf?t=1475034955') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  src: url('/fonts/lm-logo.eot?t=1475034956'); /* IE9*/
+  src: url('/fonts/lm-logo.eot?t=1475034956#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/fonts/lm-logo.woff?t=1475034956') format('woff'), /* chrome, firefox */
+  url('/fonts/lm-logo.ttf?t=1475034956') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
   url('/fonts/lm-logo.svg?t=1475034955#iconfont') format('svg'); /* iOS 4.1- */
 }
 
@@ -16,19 +16,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .lm-logo:before { 
-    content: "\e603"; 
+    content: "\e900"; 
 }
 
 .lm-logo.lg {
-    font-size: 3em;
-    line-height: 70px;
+    font-size: 1.2em;
+/*    line-height: 70px;*/
 }
 
 
 @media only screen and (min-width: 601px){
-    .lm-logo.lg {
-        line-height: 80px;
-    }
+
 }
 
 html {
@@ -92,7 +90,6 @@ a:hover{
         width: 90%;
         max-width: 1140px;
     }
-    
 }
 
 nav.subscribe{
@@ -112,6 +109,15 @@ nav.subscribe{
 #submit-button,
 #submit-button-nologin{
     float:none;
+    margin-bottom: 1rem;
+}
+
+.search-lead{
+    margin-bottom: 1rem;
+    display: block;
+}
+.input-field label:not(.label-icon).active{
+    transform: translateY(0);
 }
 
 .map-container {
