@@ -23,11 +23,13 @@ Accounts.onCreateUser(function(options, user){
         
         username = user.services.facebook.name;
         user.username = generateUsername(username);
-        
-        if (user.services.facebook.email === "kopanda@gmail.com"){
-            Roles.setRolesOnUserObj(user, 'admin', Roles.GLOBAL_GROUP);
-        }
     }
+    
+    var arrAdmins = ["kopanda@gmail.com", "terence@creativeworks.com.hk", "kwun@creativeworks.com.hk"];
+    if (arrAdmins.includes(user.emails[0].address)){
+        Roles.setRolesOnUserObj(user, 'admin', Roles.GLOBAL_GROUP);
+    }
+    
     check(user, Schema.User);
     return user;
 });

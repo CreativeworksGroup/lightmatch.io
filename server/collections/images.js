@@ -68,6 +68,8 @@ var thumbStore = new FS.Store.OSS("thumbs", {
                   'location':{'lat':lat, 'lng': lng}
               }
           })}).run();
+          
+          console.log(exif);
       });
 
       gm(readStream, fileObj.name()).autoOrient().resize('1800', '1800').stream().pipe(writeStream)
