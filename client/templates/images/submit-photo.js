@@ -1,4 +1,4 @@
-var userGeoLocation = new ReactiveVar(null);
+//var userGeoLocation = new ReactiveVar(null);
 var map = {};
 
 initMap = function(){
@@ -113,14 +113,14 @@ Template.submitPhoto.helpers({
 });
 
 Template.submitPhoto.onCreated(function(){
-    Tracker.autorun(function (computation) {
-      userGeoLocation.set(Geolocation.latLng());
-      if (userGeoLocation.get()) {
-        //stop the tracker if we got something
-            computation.stop();
-            initMap();
-      }
-    });    
+//    Tracker.autorun(function (computation) {
+//      userGeoLocation.set(Geolocation.latLng());
+//      if (userGeoLocation.get()) {
+//        //stop the tracker if we got something
+//            computation.stop();
+//            initMap();
+//      }
+//    });    
 });
 
 Template.submitPhoto.onRendered(function () {
@@ -134,7 +134,7 @@ Template.submitPhoto.onRendered(function () {
     script.type = 'text/javascript';
 //    script.src = 'https://maps.googleapis.com/maps/api/js?' + params +
 //      '&callback=GoogleMaps.initialize';
-    script.src = 'https://www.bing.com/api/maps/mapcontrol';
+    script.src = 'https://www.bing.com/api/maps/mapcontrol?callback=initMap';
   
 
     document.body.appendChild(script);
@@ -143,5 +143,5 @@ Template.submitPhoto.onRendered(function () {
         tagClass: 'chip'
     });
     
-    console.log($("#myMap").data('lat'));
+//    console.log($("#myMap").data('lat'));
 });
