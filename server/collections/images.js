@@ -69,7 +69,7 @@ var thumbStore = new FS.Store.OSS("thumbs", {
               }
           })}).run();
           
-          console.log(exif);
+//          console.log(exif);
       });
 
       gm(readStream, fileObj.name()).autoOrient().resize('1800', '1800').stream().pipe(writeStream)
