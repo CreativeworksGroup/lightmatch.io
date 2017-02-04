@@ -31,7 +31,8 @@ Meteor.publish('image', function(id){
 const USER_FIELDS = {
     username: 1,
 //  emails: 1,
-    profile: 1
+    profile: 1,
+    facebookId: 1
 };
 
 Meteor.publish('singleUser', function (userId) {

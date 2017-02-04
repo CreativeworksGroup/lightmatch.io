@@ -97,3 +97,20 @@ img.profile, svg.profile{
     box-shadow: 0px 0px 1px rgba(0,0,0,0.45);
     vertical-align: middle;
 }
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.white-popup .modal-content h6{
+    font-weight: bold;
+}
+
+.white-popup .modal-content p{
+    font-weight: 300;
+}

@@ -1,5 +1,25 @@
 Template.singlePhoto.onRendered(function(){
-    $(".modal-trigger").modal();
+    //$("a.modal-trigger").modal();
+    //console.log($("a.modal-trigger"));
+    $("a.modal-trigger").magnificPopup({
+        type:'inline',
+        midClick: true,
+        zoom: {
+            enabled: true, // By default it's false, so don't forget to enable it
+
+            duration: 300, // duration of the effect, in milliseconds
+            easing: 'ease-in-out', // CSS transition easing function
+
+            // The "opener" function should return the element from which popup will be zoomed in
+            // and to which popup will be scaled down
+            // By defailt it looks for an image tag:
+            opener: function(openerElement) {
+              // openerElement is the element on which popup was initialized, in this case its <a> tag
+              // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+              return openerElement.is('div') ? openerElement : openerElement.find('div');
+            }
+        }
+    });
 });
 
 Template.singlePhoto.helpers({
@@ -16,13 +36,22 @@ Template.singlePhoto.helpers({
     postDate: function(){
         return moment(this.uploadedAt).format('LL');
     },
-    hasAvatar: function(){
+//    hasAvatar: function(){
+//        Meteor.subscribe('singleUser', this.userId);
+//        var author = Meteor.users.findOne({_id: this.userId});
+//        if (author.profile.avatar != undefined){
+//            return true;
+//        }
+//        return false;
+//    },
+    avatar: function(){
         Meteor.subscribe('singleUser', this.userId);
         var author = Meteor.users.findOne({_id: this.userId});
-        if (author.profile.avatar != undefined){
-            return true;
+        if (author.facebookId != undefined){
+            return 'http://graph.facebook.com/'+author.facebookId+'/picture?type=square';
         }
-        return false;
+        else
+            return '/img/profile.svg';
     }
 });
 

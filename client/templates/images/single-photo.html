@@ -3,18 +3,12 @@
         <nav class="top z-depth-0 row valign-wrapper">
             <div class="col s5">
                     <div class="author left valign"><a href="/{{author.username}}">
-                        {{#if hasAvatar}}
-                        {{#with FS.GetFile "images" author.profile.avatar}}
-                        <img src={{this.url}} class="profile circle responsive-img" />
-                        {{/with}}
-                        {{else}}
-                        <img src="/img/profile.svg" class="profile circle responsive-img" />
-                        {{/if}}
-                        
+                        <img src="{{avatar}}" class="profile circle responsive-img" />
+
                         <span class="fullname">{{author.profile.firstName}} {{author.profile.lastName}}</span></a></div>
             </div>
             <div class="col s2 center-align">
-                <a href="/" id="back-to-home">LM</a>
+                <a href="/" id="back-to-home"><i class="lm-logo lg"></i></a>
             </div>
             <div class="col s5">
                 <a href="{{OSSUrl store='images'}}" target="_blank" class="download right waves-effect white-text"><i class="material-icons">file_download</i> <span class="value">{{downloadCount}}</span></a>
@@ -27,7 +21,7 @@
                 <div class="col s3 info right-align"><a class="waves-effect waves-light modal-trigger" href="#photo-stats"><i class="material-icons">show_chart</i></a> <a class="waves-effect waves-light modal-trigger" href="#photo-detail"><i class="material-icons">info</i></a></div>
             </div>
         </footer>
-        <div id="photo-detail" class="modal bottom-sheet">
+        <div id="photo-detail" class="white-popup mfp-hide">
             <div class="modal-content">
                 <h5>Detials</h5>
                 <div class="row">
@@ -66,7 +60,7 @@
                 </div>
             </div>
           </div>      
-        <div id="photo-stats" class="modal bottom-sheet">
+        <div id="photo-stats" class="white-popup mfp-hide">
             <div class="modal-content">
                 <h5>Stats</h5>
                 <div class="row">
