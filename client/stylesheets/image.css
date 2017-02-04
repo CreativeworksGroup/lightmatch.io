@@ -114,3 +114,8 @@ img.profile, svg.profile{
 .white-popup .modal-content p{
     font-weight: 300;
 }
+
+.mdi-content-clear[data-role=remove]:before{ 
+    content: "\E14C";
+    font-family: 'Material Icons';
+}

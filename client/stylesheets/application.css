@@ -25,8 +25,13 @@
 }
 
 
+.author .fullname{
+    display: none;
+}
 @media only screen and (min-width: 601px){
-
+    .author .fullname{
+        display: inline;
+    }
 }
 
 html {
@@ -115,9 +120,6 @@ nav.subscribe{
 .search-lead{
     margin-bottom: 1rem;
     display: block;
-}
-.input-field label:not(.label-icon).active{
-    transform: translateY(0);
 }
 
 .map-container {

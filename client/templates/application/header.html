@@ -20,6 +20,14 @@
             {{#if currentUser}}
             <li><a href="{{photoPath}}" class="waves-effect waves-light">{{_ "myPhotos"}}</a></li>
             {{/if}}
+            <li>{{> atNavButton}}</li>
+            <li class="dropdown">
+              <a class="dropdown-button waves-effect waves-light" href="#!" data-activates="dropdown-lang-side">{{_ "menuLanguage"}}<i class="material-icons right">arrow_drop_down</i></a>
+              <ul id="dropdown-lang-side" class="dropdown-content">
+                <li class="grey darken-3"><a href="#" class="lang white-text waves-effect waves-light" data-lang="en">English</a></li>
+                <li class="grey darken-3"><a href="#" class="lang white-text waves-effect waves-light" data-lang="zh-CN">中文</a></li>          
+              </ul>
+            </li>
           </ul>          
       </div>      
   </nav>
