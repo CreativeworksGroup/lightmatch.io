@@ -1,5 +1,6 @@
 Template.header.onRendered(function(){
     $(".button-collapse").sideNav();
+    $('.dropdown-button').dropdown();
 });
 Template.header.helpers({
     'photoPath': function(){

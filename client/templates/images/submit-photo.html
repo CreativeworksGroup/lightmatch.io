@@ -1,21 +1,21 @@
 <template name="submitPhoto">
     <div class="row">
-        <h3 class="center-align">Tell us more about your photo</h3>
-        <div class="photo col m6">
+        <h3 class="center-align">{{_ "tellUsMore"}}</h3>
+        <div class="photo col m6 s12">
             <img src="{{OSSUrl store='thumbs'}}" class="responsive-img"/>
         </div>
         <form id="image-detail" class="col m6 tags-form">
             <div class="input-field col s12">
                   <input id="photo-tags" type="text" data-role="materialtags" required="required">
-                    <label for="photo-tags">Tags</label>
+                    <label for="photo-tags">{{_ "tags"}}</label>
             </div>
             <div class="input-field col s12">
                 <textarea id="description" class="materialize-textarea"></textarea>
-                <label for="description">Description</label>
+                <label for="description">{{_ "description"}}</label>
             </div>
             <div class="input-field col s12" id="search-box-container">
                 <input id="search-box" type="text" placeholder=""/>
-                <label>Where was it taken?</label>
+                <label>{{_ "where"}}</label>
             </div>
             <div class="input-field col s12">
                 <div class="map-container" id="myMap" data-lat="{{mapOptions.lat}}" data-lng="{{mapOptions.lng}}">
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="input-field col s12">
-                  <button class="btn" id="save-detail">Save</button>
+                  <button class="btn" id="save-detail">{{_ "save"}}</button>
             </div>
         </form>
       </div> 

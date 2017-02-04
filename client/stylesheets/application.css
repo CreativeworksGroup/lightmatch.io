@@ -141,3 +141,7 @@ form#search-form, form#search-form .input-field{
 .materialize-tags input{
     min-width: 100px !important;
 }
+
+footer{
+    overflow: hidden;
+}

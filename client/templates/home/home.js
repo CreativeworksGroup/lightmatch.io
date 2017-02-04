@@ -83,9 +83,6 @@ Template.home.onRendered(function(){
             });        
         debouncedRelayout();
     });
-    
-    $('.dropdown-button').dropdown();
-
 });
 
 Template.image.onRendered(function(){
