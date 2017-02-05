@@ -24,7 +24,10 @@ Accounts.onCreateUser(function(options, user){
         username = user.services.facebook.name;
         user.username = generateUsername(username);
     }
-    
+    else{
+        //user.profile = {};
+        user.profile = options.profile;
+    }
     var arrAdmins = ["kopanda@gmail.com", "terence@creativeworks.com.hk", "kwun@creativeworks.com.hk"];
     if (arrAdmins.includes(user.emails[0].address)){
         Roles.setRolesOnUserObj(user, 'admin', Roles.GLOBAL_GROUP);
