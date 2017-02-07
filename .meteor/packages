@@ -56,4 +56,5 @@ mdg:geolocation
 cfs:ui
 ecmascript@0.6.1
 fourseven:scss
-accounts-facebook
+accounts-facebook@1.0.11
+dferber:prerender
