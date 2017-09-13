@@ -14,8 +14,11 @@ Meteor.publish('images', function(limit, username, searchQuery){
     
     if (searchQuery){
         check(searchQuery, String);
-        findQuery = {tags: searchQuery.toLowerCase(), published:true};
-    }
+   	findQuery = {$or: [
+                        { tags: searchQuery.toLowerCase() , published:true },
+                        { place: { $regex: ".*" + searchQuery + ".*" , "$options": "i"} , published:true }
+                    ]}
+	}
     return Images.find(findQuery, {
         limit: limit,
         sort: {uploadedAt: -1}
