@@ -21,13 +21,17 @@ Template.image.helpers({
     publisher: function(){
         Meteor.subscribe('singleUser', this.userId);
         var author = Meteor.users.findOne({ _id: this.userId});
-        return author.profile.firstName + " "+ author.profile.lastName;
+        if (author){
+            return author.profile.firstName + " "+ author.profile.lastName;
+        }
     },
     
     authorname: function(){
         Meteor.subscribe('singleUser', this.userId);
         var author = Meteor.users.findOne({ _id: this.userId});
-        return author.username;
+        if (author){
+            return author.username;
+        }
     },
     
     isAdmin: function(){
