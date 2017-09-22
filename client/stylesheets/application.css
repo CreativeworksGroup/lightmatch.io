@@ -71,8 +71,8 @@ h1 {
     font-size: 90%;
 }
 
-.brand-logo{
-    margin-left: 0.5em;
+nav .brand-logo i{
+    margin: 0 15px;
 }
 
 #view-switcher{

@@ -1,0 +1,26 @@
+{
+  "name": "lightmatch.io",
+  "version": "1.0.0",
+  "description": "The first ever photo sharing platform based on Creative Commons Zero in China.",
+  "main": "config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CreativeworksGroup/lightmatch.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CreativeworksGroup/lightmatch.io/issues"
+  },
+  "homepage": "https://github.com/CreativeworksGroup/lightmatch.io#readme",
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "bcrypt": "^1.0.3"
+  }
+}
