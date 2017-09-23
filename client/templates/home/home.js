@@ -26,13 +26,12 @@ Template.home.created = function(){
 
 Template.home.rendered = function(){
     var self = this;
-    
-    $(window).scroll(function(){
+
+    $(window).on('scroll', _.throttle(function(){
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 100){
             incrementLimit(self);
         }
-    });
-    
+    }, 200));
 }
 
 Template.home.helpers({
