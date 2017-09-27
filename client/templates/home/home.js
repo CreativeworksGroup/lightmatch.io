@@ -21,7 +21,7 @@ Template.home.created = function(){
 //        Meteor.subscribe('profilePictures');
     });
     
-    Session.set('displayGrid', false);
+    // Session.set('displayGrid', false);
 }
 
 Template.home.rendered = function(){
@@ -31,7 +31,17 @@ Template.home.rendered = function(){
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 100){
             incrementLimit(self);
         }
-    }, 200));
+
+        if ( $(window).scrollTop() != 0 ) {
+            Session.set('scrollPos', $(window).scrollTop());
+            //console.log(Session.get('scrollPos'));
+        }
+    }, 200));   
+
+    if (!Session.get('displayGrid')){
+       $(window).scrollTop(Session.get('scrollPos') || 0)
+    }
+
 }
 
 Template.home.helpers({
@@ -56,8 +66,15 @@ var incrementLimit = function(templateInstance){
 
 var debouncedRelayout = _.debounce(function(){
     if ($(".images")){
+         $(".images").masonry({
+                itemSelector: '.image',
+                columnWidth: '.image',
+                percentPosition: true
+        }); 
         $(".images").masonry('reloadItems');
         $(".images").masonry();
+
+        $(window).scrollTop(Session.get('scrollPos') || 0)
     }
 },600);
 
@@ -66,18 +83,18 @@ Template.home.onRendered(function(){
         
     $("#view-switcher a.full").click(function(e){
         e.preventDefault();
-        $(".image").removeClass('m6 l4');
+        // $(".image").removeClass('m6 l4');
         $(".images").masonry('destroy'); 
         Session.set('displayGrid', false);
     });
 
     $("#view-switcher a.grid").click(function(e){
         e.preventDefault();
-        $(".image").addClass('m6 l4');
+        // $(".image").addClass('m6 l4');
         Session.set('displayGrid', true);
         $gallery.masonry({
-                itemSelector: '.col.m6',
-                columnWidth: '.col.m6',
+                itemSelector: '.image',
+                columnWidth: '.image',
                 percentPosition: true
             });        
         debouncedRelayout();
