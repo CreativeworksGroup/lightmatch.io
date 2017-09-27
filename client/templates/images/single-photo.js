@@ -20,6 +20,14 @@ Template.singlePhoto.onRendered(function(){
             }
         }
     });
+
+    $(document).on('keyup',function(evt) {
+        if (evt.keyCode == 27) {
+            history.back();
+            $(document).off('keyup');
+        }
+    });
+
 });
 
 Template.singlePhoto.helpers({
