@@ -8,12 +8,11 @@ Template.image.helpers({
         return ((this.userId === Meteor.userId()) || Roles.userIsInRole(Meteor.userId(), ['admin']));
     },
     
-    displayClass: function(){
-        var displayGrid = Session.get('displayGrid');
-        if (displayGrid){
+    displayClass: function() {
+        if (Session.equals('displayGrid', 'true')) {
             return 's12 m6 l4';
         }
-        else{
+        else {
             return 's12';
         }
     },

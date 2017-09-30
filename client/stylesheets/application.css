@@ -142,5 +142,6 @@ form#search-form, form#search-form .input-field{
 }
 
 footer{
+    clear: left;
     overflow: hidden;
 }

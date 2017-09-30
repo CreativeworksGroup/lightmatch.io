@@ -21,6 +21,7 @@
   "homepage": "https://github.com/CreativeworksGroup/lightmatch.io#readme",
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "bcrypt": "^1.0.3"
+    "bcrypt": "^1.0.3",
+    "imagesloaded": "^4.1.3"
   }
 }
