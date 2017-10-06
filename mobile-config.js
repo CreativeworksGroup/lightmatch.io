@@ -68,8 +68,8 @@ App.configurePlugin('com.phonegap.plugins.facebookconnect', {
 App.accessRule('https://lightmatch-pro.oss-cn-hangzhou.aliyuncs.com');
 App.accessRule('https://lightmatch-thumb.oss-cn-hangzhou.aliyuncs.com');
 
-App.appendToConfig('<platform name="ios">' +
-    '<config-file platform="ios" target="*-Info.plist" parent="NSPhotoLibraryUsageDescription"><string></string></config-file>' +
-    '<config-file platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription"><string></string></config-file>' +
-    '<config-file platform="ios" target="*-Info.plist" parent="ITSAppUsesNonExemptEncryption"><false/></config-file>' +
-    '</platform>');
+// App.appendToConfig('<platform name="ios">' +
+//     '<config-file platform="ios" target="*-Info.plist" parent="NSPhotoLibraryUsageDescription"><string></string></config-file>' +
+//     '<config-file platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription"><string></string></config-file>' +
+//     '<config-file platform="ios" target="*-Info.plist" parent="ITSAppUsesNonExemptEncryption"><false/></config-file>' +
+//     '</platform>');
