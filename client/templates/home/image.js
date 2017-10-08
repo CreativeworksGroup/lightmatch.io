@@ -61,7 +61,10 @@ Template.image.events({
     },
     'click .card-image': function(e){
         NProgress.start();
-        Router.go('/photo/'+$(e.target).data("imageid"));
+        // Router.go('/photo/'+$(e.target).data("imageid"));
+        $(e.target).addClass('image-selected'); 
+        $('.md-image-overlay').addClass('md-image-show');
+        history.pushState(null, null, '/photo/'+ $(e.target).data("imageid"));
         if (!this.views){
             Images.update(this._id,{
                 $set: { views: 1}
@@ -83,3 +86,16 @@ Template.image.events({
 //        });
 //    }
 });
+
+Template.image.onRendered(function () {
+    $(document).on('keyup',function(evt) {
+        if (evt.keyCode == 27) {
+            user = Meteor.user();
+            history.pushState(null, null, '/'+ user.username);
+            $('.md-image-overlay').removeClass('md-image-show');
+            $('.image-selected').removeClass('image-selected');
+            // $('.md-image-overlay').load('"/'+ user.username + '"' + " .md-image-overlay");
+        }
+    });
+
+}) 

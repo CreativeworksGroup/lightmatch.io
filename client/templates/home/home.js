@@ -92,9 +92,16 @@ Template.home.onRendered(function () {
     });
 });
 
+var imgSelected = new Deps.Dependency;
+
 Template.home.helpers({
     'images': function() {
         return Images.find({}, {sort:{uploadedAt:-1}});
+    },
+    'imgOverlay': function() {
+        imgSelected.depend();
+        var id = $('.image-selected').attr('data-imageid');
+        return Images.findOne({_id: id});
     }
 });
 
@@ -103,6 +110,9 @@ Template.home.events({
        e.preventDefault();
        
        Router.go('/tag/'+$("input#search").val());
+   },
+   'click': function(e) {
+        imgSelected.changed();
    }
 });
        
