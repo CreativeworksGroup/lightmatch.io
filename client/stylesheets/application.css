@@ -88,6 +88,12 @@ nav .brand-logo i{
     display: inline-block;
 }
 
+@media screen and (max-width: 600px) {
+  #view-switcher {
+    display: none;
+  }
+}
+
 a:hover{
     text-decoration: none;
     color: #fff;
