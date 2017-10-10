@@ -80,18 +80,21 @@ nav .brand-logo i{
 }
 
 #view-switcher{
-    display: inline-block;
+    display: none;
     text-align: center;
 }
 
 #view-switcher ul{
-    display: inline-block;
+    display: none;
 }
 
-@media screen and (max-width: 600px) {
-  #view-switcher {
-    display: none;
-  }
+@media (min-width: 600px){
+    #view-switcher{
+          display: inline-block;
+    }
+    #view-switcher ul{
+          display: inline-block;
+    }
 }
 
 a:hover{
@@ -145,6 +148,18 @@ a#back-to-home {
 
 form#search-form, form#search-form .input-field{
     height: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.input-field input[type=search] {
+  height: inherit;
+  display: inline;
+}
+
+.images.row {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .materialize-tags input{
