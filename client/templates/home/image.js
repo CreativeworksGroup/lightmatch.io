@@ -94,8 +94,12 @@ Template.image.onRendered(function () {
             history.pushState(null, null, '/'+ user.username);
             $('.md-image-overlay').removeClass('md-image-show');
             $('.image-selected').removeClass('image-selected');
-            // $('.md-image-overlay').load('"/'+ user.username + '"' + " .md-image-overlay");
         }
+    });
+    
+    $(window).on('popstate', function() { 
+        $('.md-image-overlay').removeClass('md-image-show');
+        $('.image-selected').removeClass('image-selected');
     });
 
 }) 
