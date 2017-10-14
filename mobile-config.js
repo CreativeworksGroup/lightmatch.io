@@ -24,12 +24,12 @@ App.icons({
     ios_notification: 'assets/icons/ios/ios_notification.png',
     ios_notification_2x: 'assets/icons/ios/ios_notification_2x.png',
     ios_notification_3x: 'assets/icons/ios/ios_notification_3x.png',
-    // iphone_legacy: 'assets/icons/ios/iphone_legacy.png',
-    // iphone_legacy_2x: 'assets/icons/ios/iphone_legacy_2x.png',
-    // ipad_spotlight_legacy: 'assets/icons/ios/ipad_spotlight_legacy.png',
-    // ipad_spotlight_legacy_2x: 'assets/icons/ios/ipad_spotlight_legacy_2x.png',
-    // ipad_app_legacy: 'assets/icons/ios/ipad_app_legacy.png',
-    // ipad_app_legacy_2x: 'assets/icons/ios/ipad_app_legacy_2x.png',
+    iphone_legacy: 'assets/icons/ios/iphone_legacy.png',
+    iphone_legacy_2x: 'assets/icons/ios/iphone_legacy_2x.png',
+    ipad_spotlight_legacy: 'assets/icons/ios/ipad_spotlight_legacy.png',
+    ipad_spotlight_legacy_2x: 'assets/icons/ios/ipad_spotlight_legacy_2x.png',
+    ipad_app_legacy: 'assets/icons/ios/ipad_app_legacy.png',
+    ipad_app_legacy_2x: 'assets/icons/ios/ipad_app_legacy_2x.png',
     android_mdpi: 'assets/icons/android/android_mdpi.png',
     android_hdpi: 'assets/icons/android/android_hdpi.png',
     android_xhdpi: 'assets/icons/android/android_xhdpi.png',
@@ -68,8 +68,8 @@ App.configurePlugin('com.phonegap.plugins.facebookconnect', {
 App.accessRule('https://lightmatch-pro.oss-cn-hangzhou.aliyuncs.com');
 App.accessRule('https://lightmatch-thumb.oss-cn-hangzhou.aliyuncs.com');
 
-// App.appendToConfig('<platform name="ios">' +
+App.appendToConfig('<platform name="ios">' +
 //     '<config-file platform="ios" target="*-Info.plist" parent="NSPhotoLibraryUsageDescription"><string></string></config-file>' +
-//     '<config-file platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription"><string></string></config-file>' +
-//     '<config-file platform="ios" target="*-Info.plist" parent="ITSAppUsesNonExemptEncryption"><false/></config-file>' +
-//     '</platform>');
+    '<config-file platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription"><string></string></config-file>' +
+    '<config-file platform="ios" target="*-Info.plist" parent="ITSAppUsesNonExemptEncryption"><false/></config-file>' +
+    '</platform>');

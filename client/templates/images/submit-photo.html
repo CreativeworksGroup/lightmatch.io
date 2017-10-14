@@ -1,4 +1,10 @@
 <template name="submitPhoto">
+    {{#with image}}
+        {{> submitPhotoForm}}
+    {{/with}}
+</template>
+
+<template name="submitPhotoForm">
     <div class="row">
         <h3 class="center-align">{{_ "tellUsMore"}}</h3>
         <div class="photo col m6 s12">
@@ -6,8 +12,8 @@
         </div>
         <form id="image-detail" class="col m6 tags-form">
             <div class="input-field col s12">
-                  <input id="photo-tags" type="text" data-role="materialtags" required="required">
-                    <label for="photo-tags">{{_ "tags"}}</label>
+                <input id="photo-tags" type="text" data-role="materialtags" required="required">
+                <label for="photo-tags">{{_ "tags"}}</label>
             </div>
             <div class="input-field col s12">
                 <textarea id="description" class="materialize-textarea"></textarea>
@@ -19,12 +25,12 @@
             </div>
             <div class="input-field col s12">
                 <div class="map-container" id="myMap" data-lat="{{mapOptions.lat}}" data-lng="{{mapOptions.lng}}">
-                    
+
                 </div>
             </div>
             <div class="input-field col s12">
-                  <button class="btn" id="save-detail">{{_ "save"}}</button>
+                <button class="btn" id="save-detail">{{_ "save"}}</button>
             </div>
         </form>
-      </div> 
+    </div>
 </template>

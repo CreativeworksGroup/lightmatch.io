@@ -31,19 +31,19 @@ Template.submitButton.events({
                 toastr.success("上载成功，正在制作缩图，你很快可在「我的相片」看到。<br/>Upload success! Generating thumbnail... You check this it out from \"My Photo\" soon.");
                 $.magnificPopup.close();
                 NProgress.start();
-                Router.go('/photo/'+imgObj._id+'/submit/');
+                FlowRouter.go('/photo/'+imgObj._id+'/submit/');
                 NProgress.done();
             })
         });          
        }
        else{
-           Router.go('/user/sign-in');
+           FlowRouter.go('/user/sign-in');
        }
    } 
 });
 
 Template.submitButtonNoLogin.events({
     'click #submit-button-nologin': function(e){
-        Router.go('/user/sign-in');
+        FlowRouter.go('/user/sign-in');
     }
 });

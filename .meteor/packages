@@ -4,7 +4,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-iron:router
 sacha:spin
 chrismbeckett:toastr
 raix:ui-dropped-event
@@ -18,8 +17,6 @@ aldeed:collection2
 aldeed:autoform
 cfs:graphicsmagick
 iyyang:cfs-aliyun
-isotope:isotope
-gorillastack:iron-router-gtm
 meteor-base@1.1.0
 mobile-experience@1.0.5
 mongo@1.2.2
@@ -44,7 +41,6 @@ gildaspk:autoform-materialize
 sjors:meteor-masonry
 mrt:nprogress
 useraccounts:materialize
-useraccounts:iron-routing
 service-configuration@1.0.11
 accounts-password@1.4.0
 accounts-ui@1.1.9
@@ -59,3 +55,8 @@ accounts-facebook@1.2.1
 dferber:prerender
 facebook-config-ui@1.0.0
 dynamic-import@0.1.3
+kadira:flow-router
+kadira:blaze-layout
+useraccounts:flow-routing
+arillo:flow-router-helpers
+meteorhacks:fast-render

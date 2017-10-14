@@ -15,7 +15,7 @@
         <div>
 	  	{{> header}}
         <div id="main" class="container">
-            {{> yield}}
+            {{> Template.dynamic template=main}}
         </div>
         {{> footer}}
         </div>
@@ -23,5 +23,5 @@
 </template>
 
 <template name="singleImage">
-        {{> yield}}
+        {{> Template.dynamic template=main}}
 </template>

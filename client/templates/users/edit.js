@@ -31,7 +31,7 @@ AutoForm.hooks({
             update: function(error, result) {
             	console.log("Error" , error);
             	console.log("result", result);
-                Router.go('/profile/edit');
+                FlowRouter.go('/profile/edit');
             }
         }
     }

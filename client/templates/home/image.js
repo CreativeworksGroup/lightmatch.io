@@ -61,7 +61,7 @@ Template.image.events({
     },
     'click .card-image': function(e){
         NProgress.start();
-        Router.go('/photo/'+$(e.target).data("imageid"));
+        FlowRouter.go('/photo/'+$(e.target).data("imageid"));
         if (!this.views){
             Images.update(this._id,{
                 $set: { views: 1}

@@ -56,7 +56,7 @@ Template.submitPhoto.events({
         //const text = target.text.value;
 
         var tags = $("#photo-tags").materialtags('items');
-        var path = Iron.Location.get().path.split("/");
+        var path = FlowRouter.current().path.split("/");
         var imgId = path[2];
 
         Images.update(imgId, {
@@ -78,7 +78,7 @@ Template.submitPhoto.events({
                 submitted: true
             }
         }, null, function(){
-            Router.go('/photo/submit/success');
+            FlowRouter.go('/photo/submit/success');
         });
     },
     'submit form': function(e){
@@ -86,7 +86,13 @@ Template.submitPhoto.events({
     }
 });
 
-Template.submitPhoto.helpers({    
+Template.submitPhoto.helpers({
+    image: function () {
+        let image = Images.findOne({_id: FlowRouter.getParam('_id')});
+        if (image) {
+            return image;
+        }
+    },
     mapOptions: function(){
 //        if (Microsoft.Maps){
             // Map initialization options
@@ -123,25 +129,25 @@ Template.submitPhoto.onCreated(function(){
 //    });    
 });
 
-Template.submitPhoto.onRendered(function () {
+Template.submitPhotoForm.onRendered(function () {
     // We can use the `ready` callback to interact with the map API once the map is ready.
 
 //    $.getScript("https://www.bing.com/api/maps/mapcontrol?callback=initMap").done(function(script,status){
-//        
-//    });   
+//
+//    });
 
     var script = document.createElement('script');
     script.type = 'text/javascript';
 //    script.src = 'https://maps.googleapis.com/maps/api/js?' + params +
 //      '&callback=GoogleMaps.initialize';
     script.src = 'https://www.bing.com/api/maps/mapcontrol?callback=initMap';
-  
+
 
     document.body.appendChild(script);
-    
+
     this.$('input[data-role=materialtags]').materialtags({
         tagClass: 'chip'
     });
-    
+
 //    console.log($("#myMap").data('lat'));
 });

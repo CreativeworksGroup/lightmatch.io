@@ -1,4 +1,4 @@
-Template.singlePhoto.onRendered(function(){
+Template.singlePhoto.onRendered(function() {
     //$("a.modal-trigger").modal();
     //console.log($("a.modal-trigger"));
     $("a.modal-trigger").magnificPopup({
@@ -23,13 +23,19 @@ Template.singlePhoto.onRendered(function(){
 });
 
 Template.singlePhoto.helpers({
-    'author': function(){
+    image: function () {
+        let image = Images.findOne({_id: FlowRouter.getParam('_id')});
+        if (image) {
+            return image;
+        }
+    },
+    author: function(){
         Meteor.subscribe('singleUser', this.userId);
         Meteor.subscribe('avatar');
-        var author = Meteor.users.findOne({ _id: this.userId});
+        var author = Meteor.users.findOne({_id: this.userId});
         return author;
     },
-    'liked': function(){
+    liked: function(){
         liked = Images.findOne({_id: this._id, likes:Meteor.userId()});
         return liked;
     },

@@ -13,7 +13,7 @@ Template.home.onCreated(function () {
     self.limit.set(parseInt(Meteor.settings.public.recordsPerPage));
 
     this.autorun(function() {
-        self.subscribe('images', self.limit.get(), Router.current().params.userSlug, Router.current().params.searchQuery, {onReady: function() {
+        self.subscribe('images', self.limit.get(), FlowRouter.getParam('userSlug'), FlowRouter.getParam('searchQuery'), {onReady: function() {
             if (Session.equals('displayGrid', 'true')) {
                 debouncedRelayout();
             }
@@ -102,7 +102,7 @@ Template.home.events({
    'submit form#search-form': function(e) {
        e.preventDefault();
        
-       Router.go('/tag/'+$("input#search").val());
+       FlowRouter.go('/tag/'+$("input#search").val());
    }
 });
        
