@@ -59,17 +59,17 @@ Template.image.events({
             $set: { published: ! this.published },
         });                      
     },
-    'click .card-image': function(e){
+    'click .card-image': function (e) {
         NProgress.start();
-        FlowRouter.go('/photo/'+$(e.target).data("imageid"));
-        if (!this.views){
-            Images.update(this._id,{
-                $set: { views: 1}
+        FlowRouter.go('/photo/' + $(e.target).data("imageid"));
+        if (this.views === undefined || typeof this.views !== 'number' || this.views <= 0) {
+            Images.update(this._id, {
+                $set: {views: 1}
             });
         }
-        else{
-            Images.update(this._id,{
-                $set: { views: this.views+1 }
+        else {
+            Images.update(this._id, {
+                $set: {views: this.views + 1}
             });
         }
         NProgress.done();
