@@ -1,7 +1,7 @@
-//Template.submitSuccess.events({
+// Template.submitSuccess.events({
 //   'change #photo': function(e){
 //       var user = Meteor.user();
-//       
+//
 //       if (user){
 //         FS.Utility.eachFile(e, function(file){
 //            var newFile = new FS.File(file);
@@ -15,7 +15,7 @@
 //                    console.log(error);
 //                }
 //                else{
-//                    
+//
 //                    $.magnificPopup.open({
 //                      items: {
 //                        src: '#uploading-dialog'
@@ -26,7 +26,7 @@
 //                    });
 //                }
 //            });
-//            
+//
 //            newFile.once("uploaded", function(){
 //                toastr.success("上载成功，正在制作缩图，你很快可在「我的相片」看到。<br/>Upload success! Generating thumbnail... You check this it out from \"My Photo\" soon.");
 //                $.magnificPopup.close();
@@ -34,10 +34,10 @@
 //                Router.go('/photo/'+imgObj._id+'/submit/');
 //                NProgress.done();
 //            })
-//        });          
+//        });
 //       }
 //       else{
 //           Router.go('/user/sign-in');
 //       }
-//   } 
-//});
+//   }
+// });

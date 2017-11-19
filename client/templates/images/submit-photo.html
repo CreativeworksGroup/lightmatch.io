@@ -1,36 +1,36 @@
-<template name="submitPhoto">
-    {{#with image}}
-        {{> submitPhotoForm}}
-    {{/with}}
-</template>
+<!--<template name="submitPhoto">-->
+    <!--{{#with image}}-->
+        <!--{{> submitPhotoForm}}-->
+    <!--{{/with}}-->
+<!--</template>-->
 
-<template name="submitPhotoForm">
-    <div class="row">
-        <h3 class="center-align">{{_ "tellUsMore"}}</h3>
-        <div class="photo col m6 s12">
-            <img src="{{OSSUrl store='thumbs'}}" class="responsive-img"/>
-        </div>
-        <form id="image-detail" class="col m6 tags-form">
-            <div class="input-field col s12">
-                <input id="photo-tags" type="text" data-role="materialtags" required="required">
-                <label for="photo-tags">{{_ "tags"}}</label>
-            </div>
-            <div class="input-field col s12">
-                <textarea id="description" class="materialize-textarea"></textarea>
-                <label for="description">{{_ "description"}}</label>
-            </div>
-            <div class="input-field col s12" id="search-box-container">
-                <input id="search-box" type="text" placeholder=""/>
-                <label>{{_ "where"}}</label>
-            </div>
-            <div class="input-field col s12">
-                <div class="map-container" id="myMap" data-lat="{{mapOptions.lat}}" data-lng="{{mapOptions.lng}}">
+<!--<template name="submitPhotoForm">-->
+    <!--<div class="row">-->
+        <!--<h3 class="center-align">{{_ "tellUsMore"}}</h3>-->
+        <!--<div class="photo col m6 s12">-->
+            <!--<img src="{{OSSUrl store='thumbs'}}" class="responsive-img"/>-->
+        <!--</div>-->
+        <!--<form id="image-detail" class="col m6 tags-form">-->
+            <!--<div class="input-field col s12">-->
+                <!--<input id="photo-tags" type="text" data-role="materialtags" required="required">-->
+                <!--<label for="photo-tags">{{_ "tags"}}</label>-->
+            <!--</div>-->
+            <!--<div class="input-field col s12">-->
+                <!--<textarea id="description" class="materialize-textarea"></textarea>-->
+                <!--<label for="description">{{_ "description"}}</label>-->
+            <!--</div>-->
+            <!--<div class="input-field col s12" id="search-box-container">-->
+                <!--<input id="search-box" type="text" placeholder=""/>-->
+                <!--<label>{{_ "where"}}</label>-->
+            <!--</div>-->
+            <!--<div class="input-field col s12">-->
+                <!--<div class="map-container" id="myMap" data-lat="{{mapOptions.lat}}" data-lng="{{mapOptions.lng}}">-->
 
-                </div>
-            </div>
-            <div class="input-field col s12">
-                <button class="btn" id="save-detail">{{_ "save"}}</button>
-            </div>
-        </form>
-    </div>
-</template>
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="input-field col s12">-->
+                <!--<button class="btn" id="save-detail">{{_ "save"}}</button>-->
+            <!--</div>-->
+        <!--</form>-->
+    <!--</div>-->
+<!--</template>-->

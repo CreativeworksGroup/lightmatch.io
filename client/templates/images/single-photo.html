@@ -1,86 +1,86 @@
-<template name="singlePhoto">
-    {{#with image}}
-        <div id="photo-container" style="background-image:url('{{OSSUrl store='thumbs'}}');">
-            <nav class="top z-depth-0 row valign-wrapper">
-                <div class="col s5">
-                    <div class="author left valign"><a href="/{{author.username}}">
-                        <img src="{{avatar}}" class="profile circle responsive-img" />
+<!--<template name="singlePhoto">-->
+    <!--{{#with image}}-->
+        <!--<div id="photo-container" style="background-image:url('{{OSSUrl store='thumbs'}}');">-->
+            <!--<nav class="top z-depth-0 row valign-wrapper">-->
+                <!--<div class="col s5">-->
+                    <!--<div class="author left valign"><a href="/{{author.username}}">-->
+                        <!--<img src="{{avatar}}" class="profile circle responsive-img" />-->
 
-                        <span class="fullname">{{author.profile.firstName}} {{author.profile.lastName}}</span></a></div>
-                </div>
-                <div class="col s2 center-align">
-                    <a href="/" id="back-to-home"><i class="lm-logo lg"></i></a>
-                </div>
-                <div class="col s5">
-                    <a href="{{OSSUrl store='images'}}" target="_blank" class="download right waves-effect white-text"><i class="material-icons">file_download</i> <span class="value">{{downloadCount}}</span></a>
-                    <a href="#" class="right waves-effect white-text like {{#if liked}}liked{{/if}}"><i class="material-icons">favorite</i> <span class="value">{{likes.length}}</span></a>
-                </div>
-            </nav>
-            <footer>
-                <div class="row">
-                    <div class="col s9 location"><i class="material-icons">place</i> {{place}}</div>
-                    <div class="col s3 info right-align"><a class="waves-effect waves-light modal-trigger" href="#photo-stats"><i class="material-icons">show_chart</i></a> <a class="waves-effect waves-light modal-trigger" href="#photo-detail"><i class="material-icons">info</i></a></div>
-                </div>
-            </footer>
-            <div id="photo-detail" class="white-popup mfp-hide">
-                <div class="modal-content">
-                    <h5>Details</h5>
-                    <div class="row">
-                        <div class="col m6 s12">
-                            <h6>Published</h6>
-                            <p>{{postDate}}</p>
-                        </div>
-                        <div class="col m6 s12">
-                            <h6>Dimensions</h6>
-                            <p>{{exif.ExifImageWidth}} x {{exif.ExifImageLength}}</p>
-                        </div>
-                        <div class="col m6 s12">
-                            <h6>Make</h6>
-                            <p>{{exif.Make}}</p>
-                        </div>
-                        <div class="col m6 s12">
-                            <h6>Model</h6>
-                            <p>{{exif.Model}}</p>
-                        </div>
-                        <div class="col m6 s12">
-                            <h6>Exposure Time</h6>
-                            <p>{{exif.ExposureTime}}</p>
-                        </div>
-                        <div class="col m6 s12">
-                            <h6>Aperture</h6>
-                            <p>{{exif.ApertureValue}}</p>
-                        </div>
-                        <div class="col m6 s12">
-                            <h6>Focal Length</h6>
-                            <p>{{exif.FocalLength}}</p>
-                        </div>
-                        <div class="col m6 s12">
-                            <h6>ISO</h6>
-                            <p>{{exif.ISOSpeedRatings}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="photo-stats" class="white-popup mfp-hide">
-                <div class="modal-content">
-                    <h5>Stats</h5>
-                    <div class="row">
-                        <div class="col m6 s12">
-                            <h6>Downloads</h6>
-                            <p>{{downloadCount}}</p>
-                        </div>
-                        <div class="col m6 s12">
-                            <h6>Likes</h6>
-                            <p>{{likes.length}}</p>
-                        </div>
-                        <div class="col m6 s12">
-                            <h6>Views</h6>
-                            <p>{{views}}</p>
-                        </div>
+                        <!--<span class="fullname">{{author.profile.firstName}} {{author.profile.lastName}}</span></a></div>-->
+                <!--</div>-->
+                <!--<div class="col s2 center-align">-->
+                    <!--<a href="/" id="back-to-home"><i class="lm-logo lg"></i></a>-->
+                <!--</div>-->
+                <!--<div class="col s5">-->
+                    <!--<a href="{{OSSUrl store='images'}}" target="_blank" class="download right waves-effect white-text"><i class="material-icons">file_download</i> <span class="value">{{downloadCount}}</span></a>-->
+                    <!--<a href="#" class="right waves-effect white-text like {{#if liked}}liked{{/if}}"><i class="material-icons">favorite</i> <span class="value">{{likes.length}}</span></a>-->
+                <!--</div>-->
+            <!--</nav>-->
+            <!--<footer>-->
+                <!--<div class="row">-->
+                    <!--<div class="col s9 location"><i class="material-icons">place</i> {{place}}</div>-->
+                    <!--<div class="col s3 info right-align"><a class="waves-effect waves-light modal-trigger" href="#photo-stats"><i class="material-icons">show_chart</i></a> <a class="waves-effect waves-light modal-trigger" href="#photo-detail"><i class="material-icons">info</i></a></div>-->
+                <!--</div>-->
+            <!--</footer>-->
+            <!--<div id="photo-detail" class="white-popup mfp-hide">-->
+                <!--<div class="modal-content">-->
+                    <!--<h5>Details</h5>-->
+                    <!--<div class="row">-->
+                        <!--<div class="col m6 s12">-->
+                            <!--<h6>Published</h6>-->
+                            <!--<p>{{postDate}}</p>-->
+                        <!--</div>-->
+                        <!--<div class="col m6 s12">-->
+                            <!--<h6>Dimensions</h6>-->
+                            <!--<p>{{exif.ExifImageWidth}} x {{exif.ExifImageLength}}</p>-->
+                        <!--</div>-->
+                        <!--<div class="col m6 s12">-->
+                            <!--<h6>Make</h6>-->
+                            <!--<p>{{exif.Make}}</p>-->
+                        <!--</div>-->
+                        <!--<div class="col m6 s12">-->
+                            <!--<h6>Model</h6>-->
+                            <!--<p>{{exif.Model}}</p>-->
+                        <!--</div>-->
+                        <!--<div class="col m6 s12">-->
+                            <!--<h6>Exposure Time</h6>-->
+                            <!--<p>{{exif.ExposureTime}}</p>-->
+                        <!--</div>-->
+                        <!--<div class="col m6 s12">-->
+                            <!--<h6>Aperture</h6>-->
+                            <!--<p>{{exif.ApertureValue}}</p>-->
+                        <!--</div>-->
+                        <!--<div class="col m6 s12">-->
+                            <!--<h6>Focal Length</h6>-->
+                            <!--<p>{{exif.FocalLength}}</p>-->
+                        <!--</div>-->
+                        <!--<div class="col m6 s12">-->
+                            <!--<h6>ISO</h6>-->
+                            <!--<p>{{exif.ISOSpeedRatings}}</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div id="photo-stats" class="white-popup mfp-hide">-->
+                <!--<div class="modal-content">-->
+                    <!--<h5>Stats</h5>-->
+                    <!--<div class="row">-->
+                        <!--<div class="col m6 s12">-->
+                            <!--<h6>Downloads</h6>-->
+                            <!--<p>{{downloadCount}}</p>-->
+                        <!--</div>-->
+                        <!--<div class="col m6 s12">-->
+                            <!--<h6>Likes</h6>-->
+                            <!--<p>{{likes.length}}</p>-->
+                        <!--</div>-->
+                        <!--<div class="col m6 s12">-->
+                            <!--<h6>Views</h6>-->
+                            <!--<p>{{views}}</p>-->
+                        <!--</div>-->
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    {{/with}}
-</template>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--{{/with}}-->
+<!--</template>-->

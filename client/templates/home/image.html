@@ -1,31 +1,31 @@
-<template name="image">
-    <div class="image col {{displayClass}}">
-        <div class="card">
-            <!-- the image -->    
-            <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="{{OSSUrl store='thumbs'}}" data-imageId="{{_id}}" alt="" />
-            </div>
-            <div class="card-action">
-                {{#if ownImage}}
-                    <a class="delete-image">
-                        <i class="tiny material-icons">delete</i>
-                    </a>
-                    {{/if}}
-                    <a class="user-link" href="{{pathFor route='userPage' userSlug=authorname}}">{{publisher}}</a> / 
-                    <span class="count">{{_ "downloadCount" count=downloadCount}}</span>
-                    {{#if isAdmin}}
-                    <div class="right">
-                        <input type="checkbox" id="photo-{{_id}}" checked="{{published}}" class="toggle-published filled-in" />
-                        <label for="photo-{{_id}}">{{_ "featured"}}</label>
-                    </div>
-                    {{/if}}
-            </div>
-            <!-- image info -->
-            <div>
-                <div class="image-info">
+<!--<template name="image">-->
+    <!--<div class="image col {{displayClass}}">-->
+        <!--<div class="card">-->
+            <!--&lt;!&ndash; the image &ndash;&gt;    -->
+            <!--<div class="card-image waves-effect waves-block waves-light">-->
+                    <!--<img class="activator" src="{{OSSUrl store='thumbs'}}" data-imageId="{{_id}}" alt="" />-->
+            <!--</div>-->
+            <!--<div class="card-action">-->
+                <!--{{#if ownImage}}-->
+                    <!--<a class="delete-image">-->
+                        <!--<i class="tiny material-icons">delete</i>-->
+                    <!--</a>-->
+                    <!--{{/if}}-->
+                    <!--<a class="user-link" href="{{pathFor route='userPage' userSlug=authorname}}">{{publisher}}</a> / -->
+                    <!--<span class="count">{{_ "downloadCount" count=downloadCount}}</span>-->
+                    <!--{{#if isAdmin}}-->
+                    <!--<div class="right">-->
+                        <!--<input type="checkbox" id="photo-{{_id}}" checked="{{published}}" class="toggle-published filled-in" />-->
+                        <!--<label for="photo-{{_id}}">{{_ "featured"}}</label>-->
+                    <!--</div>-->
+                    <!--{{/if}}-->
+            <!--</div>-->
+            <!--&lt;!&ndash; image info &ndash;&gt;-->
+            <!--<div>-->
+                <!--<div class="image-info">-->
 
-                </div> 
-            </div>
-        </div>
-    </div>
-</template>
+                <!--</div> -->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</template>-->
