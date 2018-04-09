@@ -21,7 +21,7 @@ var imageStore = new FS.Store.OSS("images", {
   region: Meteor.settings.public.aliyunRegion,
   internal: Meteor.settings.public.aliyunInternal,
   bucket: Meteor.settings.public.aliyunBucket,
-  accessKeyId: Meteor.settings.public.aliyunAccessId, 
+  accessKeyId: Meteor.settings.public.aliyunAccessId,
   secretAccessKey: Meteor.settings.public.aliyunAccessKeySecret,
 //  transformWrite: function(fileObj, readStream, writeStream) {
 ////      gm(readStream, fileObj.name()).identify("%[EXIF:*]", function(err, format){
@@ -36,24 +36,28 @@ var thumbStore = new FS.Store.OSS("thumbs", {
   region: Meteor.settings.public.aliyunRegion,
   internal: Meteor.settings.public.aliyunInternal,
   bucket: Meteor.settings.public.aliyunBucketThumb,
-  accessKeyId: Meteor.settings.public.aliyunAccessId, 
+  accessKeyId: Meteor.settings.public.aliyunAccessId,
   secretAccessKey: Meteor.settings.public.aliyunAccessKeySecret,
   beforeWrite: function(fileObj) {
     fileObj.size(200, {store: 'thumbStore', save: false});
   },
-  transformWrite: function(fileObj, readStream, writeStream) {          
-      gm(readStream, fileObj.name()).identify("%[EXIF:*]", function(err, format){
-
+  transformWrite: function(fileObj, readStream, writeStream) {
+    let g = gm(readStream, fileObj.name());
+      g.identify("%[EXIF:*]", Meteor.bindEnvironment(function(err, format){
+        if (err){
+          fileObj.remove();
+        }
+        else{
           var tmpExif = format.split("\n");
           var exif = {};
           for (i=0; i<tmpExif.length; i++){
               var data = tmpExif[i].split("=");
               exif[data[0]] = data[1];
           }
-          
+
           var lat = '';
           var lng = '';
-          
+
           if (typeof exif.GPSLatitude != "undefined"){
               lat = exif.GPSLatitude.split(",");
               lng = exif.GPSLongitude.split(",");
@@ -61,18 +65,26 @@ var thumbStore = new FS.Store.OSS("thumbs", {
               lat = ConvertDMSToDD(lat[0],lat[1],lat[2], exif.GPSLatitudeRef) || 0;
               lng = ConvertDMSToDD(lng[0],lng[1],lng[2], exif.GPSLongitudeRef) || 0;
           }
-          
-          Fiber(function(){fileObj.update({
+
+          fileObj.update({
               $set: {
-                  'exif' : exif, 
+                  'exif' : exif,
                   'location':{'lat':lat, 'lng': lng}
               }
-          })}).run();
-          
+          });
+        }
 //          console.log(exif);
-      });
+      }));
 
-      gm(readStream, fileObj.name()).autoOrient().resize('1800', '1800').stream().pipe(writeStream)
+      g.identify({bufferStream:true}, Meteor.bindEnvironment(function(err, format){
+        if (err){
+          fileObj.remove();
+        }
+        else{
+          g.autoOrient().resize('1800', '1800').stream().pipe(writeStream)
+        }
+      }));
+      // gm(readStream, fileObj.name()).
   }
 });
 
@@ -93,7 +105,7 @@ Images = new FS.Collection("Images", {
 Images.allow({
     insert: function(userId, doc) { return userId != null; },
 //    update: function(userId, image) { return userId === image.userId; },
-    update: function(userId, image, fields, modifier) { 
+    update: function(userId, image, fields, modifier) {
         return ((userId === image.userId) || _.contains(fields, 'downloadCount') || _.contains(fields, 'likes') || Roles.userIsInRole(userId, ['admin']));
     },
     remove: function(userId, image) { return ((userId === image.userId) || Roles.userIsInRole(userId, ['admin'])); },
